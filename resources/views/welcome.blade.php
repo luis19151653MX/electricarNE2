@@ -24,18 +24,20 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="antialiased"><script src="{{ asset('js/app.js')}}" defer></script>
-<script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
+    <body class="antialiased">
+        <div id="main"> 
+            
+        </div>
 
-<script
+        <script src="{{ asset('js/app.js')}}" defer></script>
+        <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
+        <script
   src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
   crossorigin></script>
-
-<script
+  <script
   src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
   crossorigin></script>
 </body>
-    </body>
     <!--
         @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
