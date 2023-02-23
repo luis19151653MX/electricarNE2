@@ -10,7 +10,11 @@ git branch -M main
 git remote add origin https://github.com/luis19151653MX/electricarNE2.git
 git push -u origin main
 
+##modificar 
+welcome.blade, tambien en resources app.js
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##instalar dependencias
+npm install react-router-dom@6.4.1
+composer require laravel/ui
 
-hola
+
