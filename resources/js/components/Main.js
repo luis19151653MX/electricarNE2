@@ -1,13 +1,18 @@
 import React from 'react';
-function Main() {
+import { Container } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
+import Example from './Example';
+export default function Maina() {
     return (
         <div className='App'>
-            <h1>Hola</h1>
+            <Container>
+                <h1>Hola</h1>
+                <Example></Example>
+            </Container>
         </div>
     )
 }
 
-export default Main;
 if (document.getElementById('main')) {
-    ReactDOM.render(<Main />, document.getElementById('main'));
+    ReactDOM.render(<Maina />, document.getElementById('main'));
 }
