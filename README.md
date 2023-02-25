@@ -15,6 +15,9 @@ welcome.blade, tambien en resources app.js
 
 ##instalar dependencias
 npm install react-router-dom@6.4.1
-composer require laravel/ui
+composer update
+composer require laravel/ui ^3.4
+
+
 
 
