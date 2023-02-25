@@ -3382,7 +3382,7 @@ function Maina() {
     className: "App",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-        children: "Hola"
+        children: "Electricar Negocios E2"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Example__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
     })
   });

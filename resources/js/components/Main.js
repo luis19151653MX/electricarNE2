@@ -6,7 +6,7 @@ export default function Maina() {
     return (
         <div className='App'>
             <Container>
-                <h1>Hola</h1>
+                <h1>Electricar Negocios E2</h1>
                 <Example></Example>
             </Container>
         </div>
