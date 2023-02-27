@@ -13,10 +13,21 @@ git push -u origin main
 ##modificar 
 welcome.blade, tambien en resources app.js y crear Main.js
 
+#para instalarlo en una maquina
+npm uninstall cross-env
+npm install --global cross-env
+npm install --no-bin-links
+npm install
+composer install
+cp .env.example .env
+php artisan key:generate
+finalmente npm run watch
+
+
 ##instalar dependencias
 npm install react-router-dom@6.4.1
 
-//esto es para react- bootstrap
+//esto es para cuando los acabas de crear en tu maquina
 npm install
 composer install
 composer update
