@@ -36,7 +36,12 @@ php artisan ui react
 npm run watch **aqui es psoible si salen errores usar npm audit fix
 npm install react-bootstrap bootstrap
 
-#Conexion a DB4free, la cuenta es de pablo
+#Conexion a DB4free, la cuenta es de yahir
+https://www.db4free.net/phpMyAdmin/index.php?route=/&reload=1
+usuario: root_12
+pass: root1234
+
+
 correo de yahir
 DB_CONNECTION=mysql
 DB_HOST=db4free.net
