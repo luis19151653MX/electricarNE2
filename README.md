@@ -52,7 +52,8 @@ DB_PASSWORD=root1234
 
 //react router dom y axios
 npm add react-router-dom  
- npm install axios
+npm install axios
+
 
 hola
 
