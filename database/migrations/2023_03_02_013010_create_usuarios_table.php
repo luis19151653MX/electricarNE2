@@ -15,11 +15,11 @@ class CreateUsuariosTable extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->varchar("nombre");
-            $table->varchar("contraseña");
-            $table->varchar("telefono");
-            $table->varchar("direccion");
-            $table->varchar("email");
+            $table->string("nombre");
+            $table->string("contraseña");
+            $table->string("telefono");
+            $table->string("direccion");
+            $table->string("email");
             $table->date("fecha_cumpleaños");
             $table->enum('tipo',['prospecto','cliente'])->default('prospecto');
             $table->timestamps();
