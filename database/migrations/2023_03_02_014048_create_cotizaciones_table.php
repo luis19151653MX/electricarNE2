@@ -15,6 +15,14 @@ class CreateCotizacionesTable extends Migration
     {
         Schema::create('cotizaciones', function (Blueprint $table) {
             $table->id();
+            $table->text("comentarios");
+            $table->date("fecha_ultima_modificacion");
+            $table->unsignedBigInteger('venta_id');
+            $table->foreign('venta_id')->references('id')->on('ventas');
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->unsignedBigInteger('productos_id');
+            $table->foreign('productos_id')->references('id')->on('productos');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateCarritosComprasTable extends Migration
     {
         Schema::create('carritos_compras', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->char("status");
+            $table->date("fecha_ultima_modificacion");
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreatePersonalVentasTable extends Migration
     {
         Schema::create('personal_ventas', function (Blueprint $table) {
             $table->id();
+            $table->varchar("nombre");
+            $table->varchar("contraseña");
+            $table->varchar("telefono");
+            $table->varchar("direccion");
+            $table->varchar("email");
             $table->timestamps();
         });
     }

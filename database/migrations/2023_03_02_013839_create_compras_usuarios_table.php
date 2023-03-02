@@ -15,6 +15,10 @@ class CreateComprasUsuariosTable extends Migration
     {
         Schema::create('compras_usuarios', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->integer("total");
+            $table->date("fecha_ultima_modificacion");
             $table->timestamps();
         });
     }

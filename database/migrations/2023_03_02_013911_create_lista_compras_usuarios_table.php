@@ -15,6 +15,12 @@ class CreateListaComprasUsuariosTable extends Migration
     {
         Schema::create('lista_compras_usuarios', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('compra_usuario_id');
+            $table->foreign('compra_usuario_id')->references('id')->on('compras_usuarios');
+            $table->integer("cantidad");
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
+            $table->integer("codigo");
             $table->timestamps();
         });
     }

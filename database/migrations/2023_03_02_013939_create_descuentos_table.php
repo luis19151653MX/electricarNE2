@@ -15,6 +15,13 @@ class CreateDescuentosTable extends Migration
     {
         Schema::create('descuentos', function (Blueprint $table) {
             $table->id();
+            $table->integer("codigo");
+            $table->integer("porcentaje");
+            $table->date("fecha_caducidad");
+            $table->unsignedBigInteger('pv_id');
+            $table->foreign('pv_id')->references('id')->on('personal_ventas');
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->timestamps();
         });
     }
