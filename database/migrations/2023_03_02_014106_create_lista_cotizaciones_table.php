@@ -20,7 +20,7 @@ class CreateListaCotizacionesTable extends Migration
             $table->unsignedBigInteger('cotizacion_id');
             $table->foreign('cotizacion_id')->references('id')->on('cotizaciones');
             $table->unsignedBigInteger('descuento_id');
-            $table->foreign('usuario_id')->references('id')->on('desceuntos');
+            $table->foreign('descuento_id')->references('id')->on('descuentos');
             $table->unsignedBigInteger('productos_id');
             $table->foreign('productos_id')->references('id')->on('productos');
             $table->timestamps();
