@@ -15,11 +15,11 @@ class CreatePersonalComprasTable extends Migration
     {
         Schema::create('personal_compras', function (Blueprint $table) {
             $table->id();
-            $table->varchar("nombre");
-            $table->varchar("contraseña");
-            $table->varchar("telefono");
-            $table->varchar("direccion");
-            $table->varchar("email");
+            $table->string("nombre");
+            $table->string("contraseña");
+            $table->string("telefono");
+            $table->string("direccion");
+            $table->string("email");
             $table->timestamps();
         });
     }
