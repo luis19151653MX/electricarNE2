@@ -17,7 +17,7 @@ class CreateListaCotizacionesTable extends Migration
             $table->id();
             $table->char("status");
             $table->integer("cantidad");
-            $table->unsignedBigInteger('contizacion_id');
+            $table->unsignedBigInteger('cotizacion_id');
             $table->foreign('cotizacion_id')->references('id')->on('cotizaciones');
             $table->unsignedBigInteger('descuento_id');
             $table->foreign('usuario_id')->references('id')->on('desceuntos');
