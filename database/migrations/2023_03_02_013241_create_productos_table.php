@@ -21,7 +21,7 @@ class CreateProductosTable extends Migration
             $table->integer("precio");
             $table->string("marca");
             $table->string("categoria");
-            $table->date("año");
+            $table->integer("año");
             $table->text("imagen");
             $table->enum('tipo',['pull','push'])->default('push');
             $table->timestamps();

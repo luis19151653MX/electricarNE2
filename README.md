@@ -50,6 +50,10 @@ DB_DATABASE=negocios2
 DB_USERNAME=root_12
 DB_PASSWORD=root1234
 
+##ejecutar migraciones
+php artisan migrate:fresh //obtienes una nueva version de la base de datos
+
+
 //react router dom y axios
 npm add react-router-dom  
 npm install axios
