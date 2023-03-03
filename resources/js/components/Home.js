@@ -1,4 +1,5 @@
 import React from 'react';
+import IndexProduct from './IndexProducts';
 
 function Example() {
     return (
@@ -6,9 +7,7 @@ function Example() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-header">Example Component Home</div>
-
-                        <div className="card-body">I'm an example component!</div>
+                        <IndexProduct></IndexProduct>
                     </div>
                 </div>
             </div>

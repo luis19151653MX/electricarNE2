@@ -36,6 +36,15 @@ php artisan ui react
 npm run watch **aqui es psoible si salen errores usar npm audit fix
 npm install react-bootstrap bootstrap
 
+##conexion local
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=electricarne2
+DB_USERNAME=root
+DB_PASSWORD=
+
 #Conexion a DB4free, la cuenta es de yahir
 https://www.db4free.net/phpMyAdmin/index.php?route=/&reload=1
 usuario: root_12
@@ -56,8 +65,9 @@ php artisan migrate:fresh //obtienes una nueva version de la base de datos
 
 
 //react router dom y axios
-npm add react-router-dom  
 npm install axios
+npm add react-router-dom  
+
 
 
 hola
