@@ -14,7 +14,7 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        //
+        return $products = productos::all();
     }
 
     /**
