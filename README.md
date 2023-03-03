@@ -52,6 +52,7 @@ DB_PASSWORD=root1234
 
 ##ejecutar migraciones
 php artisan migrate:fresh //obtienes una nueva version de la base de datos
+ php artisan db:seed 
 
 
 //react router dom y axios
