@@ -2,8 +2,6 @@ import React from 'react'
 import { Outlet, Link } from 'react-router-dom';
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap'
 
-//'linear-gradient(#AADEE0, #FFFFFF)' #0044FF"
-
 export default function Navigation(){
     return (
         <div clas="container-fluid">
