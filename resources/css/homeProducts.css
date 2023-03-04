@@ -4,5 +4,6 @@
 }
 .cardProduct:hover{
     background-color: #ebf4fa;
-    color: #006655;   
+    color: #006655;
+    cursor: pointer;   
 }

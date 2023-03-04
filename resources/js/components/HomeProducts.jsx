@@ -1,11 +1,11 @@
 import { React, useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "../../css/homeProducts.css";
 
 export default function IndexProduct() {
-  const navigate = useNavigate();   
+  const navigate = useNavigate();
 
   const [listProduct, setListProduct] = useState([]);
   useEffect(() => {
@@ -29,33 +29,32 @@ export default function IndexProduct() {
         {
           listProduct.map(auto => {
             return (
-              <div class="col">
-                <div class="cardProduct card mb-3 card"  style={{maxWidth:"450px", minWidth:"250px", maxHeight:"600px",minHeight:"380px"}} >
-                  <img
-                  style={{objectFit:"cover"}}
-                    maxWidth="90%"
-                    maxHeight="90%"
-                    src={auto.imagen}
-                    title={auto.modelo}
-                    class="card-img-top"
-                    alt={auto.modelo + ". " + auto.año} />
-                  <div class="card-body" style={{position:"relative"}}>
-                    <h3 class="card-title">{auto.modelo}</h3>
-                    <h6 class="card-text">{"$" + auto.precio + " mxn"}</h6>
-                    <br />
-                    <Button
-                      style={{
-                        padding: 10 + "px",
-                        backgroundColor: "#57cae7",
-                        color: "#0a0a0a",
-                        textDecoration: "none",
-                        borderRadius: 15 + "px"
-                      }}
-                      onClick={() => {
-                        console.log(auto.id);
-                        navigate('/electricarNE2/public/ProductCard',{state:{autoID:auto.id}});
-                      }}>Ver producto</Button>
-                  </div>
+              <div class="col"
+                onClick={() => {
+                  console.log(auto.id);
+                  navigate('/electricarNE2/public/ProductCard', { state: { autoID: auto.id } });
+                }}
+              >
+                <div class="cardProduct card mb-3 card" style={{ maxWidth: "450px", minWidth: "250px", maxHeight: "600px", minHeight: "380px" }} >
+                  <Row >
+                    <img
+                      style={{ objectFit: "cover" }}
+                      maxWidth="90%"
+                      maxHeight="90%"
+                      src={auto.imagen}
+                      title={auto.modelo}
+                      class="card-img-top"
+                      alt={auto.modelo + ". " + auto.año} />
+                  </Row>
+                  <Row >
+                    <div class="card-body">
+                      <h3 class="card-title">{auto.modelo}</h3>
+                      <h6 class="card-text">{"$" + auto.precio + " mxn"}</h6>
+                      <br />
+                    </div>
+                  </Row>
+
+
                 </div>
               </div>
             )
