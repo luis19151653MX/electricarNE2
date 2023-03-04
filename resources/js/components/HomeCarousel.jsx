@@ -3,11 +3,11 @@ import { Carousel } from 'react-bootstrap';
 
 export default function Carrusel() {
     return (
-        <Carousel fade>
+        <Carousel fade style={{maxHeight:"600px",minHeight:"320px"}}>
             <Carousel.Item interval={1000}>
-                <div class="col text-center">
+                <div class="col text-center" style={{maxHeight:"500px" ,minHeight:"250px"}}>
                     <img
-                        className="img-fluid shadow-4"
+                        className="img shadow-4"
                         src="http://www.diamondpearlz.com/wp-content/uploads/2015/12/banner-1.jpg"
                         class="d-block w-100"
                         alt="First slide"
@@ -20,9 +20,9 @@ export default function Carrusel() {
             </Carousel.Item>
 
             <Carousel.Item interval={1000}>
-                <div class="col text-center">
+                <div class="col text-center" style={{maxHeight:"500px",minHeight:"250px"}} >
                     <img
-                        className="img-fluid shadow-4"
+                        className="img shadow-4"
                         src="https://www.carrepairadelaidesa.com.au/wp-content/uploads/2021/10/Car-Engine-Repair-Replacement-Banner.png"
                         class="d-block w-100"
                         alt="Second slide"
@@ -34,13 +34,12 @@ export default function Carrusel() {
                 </Carousel.Caption>
             </Carousel.Item>
 
-            <Carousel.Item interval={1000}>
-                <div class="col text-center">
+            <Carousel.Item interval={1000} style={{maxHeight:"500px",minHeight:"320px"}}>
+                <div class="col text-center" >
                     <img
-                        className="img-fluid shadow-4 "
+                        className="img shadow-4"
                         src="https://la-pajarita.es/wp-content/uploads/productos-sostenibles-para-hosteleria-ecofriendly-lapajarita-mapelor.jpg"
                         class="d-block w-100"
-                        width={721}
                         alt="Third slide"
                         title="Carousel2"
                     />

@@ -6,7 +6,10 @@ import Carrusel from "./HomeCarousel";
 export default function Home() {
     return (
         <Container fliud="true">
-            <Carrusel></Carrusel>
+            <div >
+                <Carrusel></Carrusel>
+            </div>
+            
             <div>
                 <br></br>
             </div>
