@@ -1,8 +1,11 @@
 import { React, useEffect, useState } from 'react';
-import { CardGroup, Container, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function IndexProduct() {
+  const navigate = useNavigate();   
+
   const [listProduct, setListProduct] = useState([]);
   useEffect(() => {
     getProduct()
@@ -28,7 +31,8 @@ export default function IndexProduct() {
               <div class="col">
                 <div class="card border-info mb-3 card text-center" >
                   <img
-                    width="50"
+                  style={{objectFit:"cover"}}
+                    width="100%"
                     height="100%"
                     src={auto.imagen}
                     title={auto.modelo}
@@ -48,7 +52,7 @@ export default function IndexProduct() {
                       }}
                       onClick={() => {
                         console.log(auto.id);
-                        //navigate('/react-example/ProductCard',{state:{autoID:auto.id}});
+                        navigate('/electricarNE2/public/ProductCard',{state:{autoID:auto.id}});
                       }}>Ver producto</Button>
                   </div>
                 </div>
