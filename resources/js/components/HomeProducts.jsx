@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import "../../css/homeProducts.css";
 
 export default function IndexProduct() {
   const navigate = useNavigate();   
@@ -29,16 +30,16 @@ export default function IndexProduct() {
           listProduct.map(auto => {
             return (
               <div class="col">
-                <div class="card border-info mb-3 card text-center" >
+                <div class="cardProduct card mb-3 card"  style={{maxWidth:"450px", minWidth:"250px", maxHeight:"600px",minHeight:"380px"}} >
                   <img
                   style={{objectFit:"cover"}}
-                    width="100%"
-                    height="100%"
+                    maxWidth="90%"
+                    maxHeight="90%"
                     src={auto.imagen}
                     title={auto.modelo}
                     class="card-img-top"
                     alt={auto.modelo + ". " + auto.año} />
-                  <div class="card-body">
+                  <div class="card-body" style={{position:"relative"}}>
                     <h3 class="card-title">{auto.modelo}</h3>
                     <h6 class="card-text">{"$" + auto.precio + " mxn"}</h6>
                     <br />

@@ -1,0 +1,8 @@
+.cardProduct{
+    text-align: center;
+    border-color: #ebf4fa;
+}
+.cardProduct:hover{
+    background-color: #ebf4fa;
+    color: #006655;   
+}
