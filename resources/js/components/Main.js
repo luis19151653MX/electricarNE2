@@ -6,10 +6,8 @@ import {BrowserRouter,Route,Routes} from "react-router-dom";
 import Home from './Home';
 import Navigation from './Navigation';
 import ProductCard from './ProductCard';
-
-
-import Example from './Example';
 import Login from './Login';
+
 export default function Main() {
     return (
         <div className='App'>
@@ -20,10 +18,6 @@ export default function Main() {
                         <Route index element={<Home />} />
                         <Route path="Home" element={<Home />} />
                         <Route path="ProductCard" element={<ProductCard />} />
-
-
-                        
-                        <Route path="Example" element={<Example />} />
                         <Route path="Login" element={<Login />} />
                     </Route>
                 </Routes>
