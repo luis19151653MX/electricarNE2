@@ -6,6 +6,8 @@ use App\Models\usuarios;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsuariosController extends Controller
 {
@@ -44,13 +46,13 @@ class UsuariosController extends Controller
             'direccion' => 'required|max:200',
             'email' => 'required|max:200',
             'fecha_cumpleaños' => 'required|max:20',
-            'tipo' => ['required',Rule::in(['prospecto', 'cliente'])]
+            'tipo' => ['required', Rule::in(['prospecto', 'cliente'])]
         ]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
-        
+
         $usuarios = usuarios::create([
             'nombre' => $request->nombre,
             'contraseña' => $request->contraseña,
@@ -64,24 +66,34 @@ class UsuariosController extends Controller
         $usuarios->save();
     }
 
-    public function c(){
-        $c1=new usuarios();
-        $c1->id=1;
-        $c1->nombre='cass';
-        $c1->contraseña='cdevfrtg';
-        $c1->telefono='4491020947';
-        $c1->direccion='fray luis de leon';
-        $c1->email='cass@gmail.com';
-        $c1->fecha_cumpleaños='2001-01-01';
-        $c1->tipo='cliente';
+    public function c()
+    {
+        $c1 = new usuarios();
+        $c1->id = 1;
+        $c1->nombre = 'cass';
+        $c1->contraseña = 'cdevfrtg';
+        $c1->telefono = '4491020947';
+        $c1->direccion = 'fray luis de leon';
+        $c1->email = 'cass@gmail.com';
+        $c1->fecha_cumpleaños = '2001-01-01';
+        $c1->tipo = 'cliente';
         $c1->save();
         return $c1;
     }
 
-    public function login(){
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'contraseña');
 
+        $usuario = DB::table('usuarios')->where('email', $credentials['email'])->first();
+        
+        if ($usuario && $usuario->email===$credentials['email'] && $usuario->contraseña===$credentials['contraseña']) {
+            return response()->json(['Las credenciales son válidas.'], 200);
+        } else {
+            return response()->json(['Las credenciales no son válidas.'], 401);
+        }
     }
-    
+
     /**
      * Display the specified resource.
      *
