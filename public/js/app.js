@@ -8785,6 +8785,14 @@ function IndexProduct() {
               minWidth: "270px",
               maxWidth: "280px"
             },
+            onClick: function onClick() {
+              console.log(auto.id);
+              navigate('/electricarNE2/public/ProductCard', {
+                state: {
+                  autoID: auto.id
+                }
+              });
+            },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                 src: auto.imagen

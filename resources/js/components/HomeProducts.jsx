@@ -29,7 +29,11 @@ export default function IndexProduct() {
           {
             listProduct.map((auto) => {
               return (
-                <Col className="cardProduct" style={{ maxHeight: "350px", minHeight: "250px", height: "300px", minWidth: "270px", maxWidth: "280px" }} >
+                <Col className="cardProduct" style={{ maxHeight: "350px", minHeight: "250px", height: "300px", minWidth: "270px", maxWidth: "280px" }} 
+                onClick={() => {
+                  console.log(auto.id);
+                  navigate('/electricarNE2/public/ProductCard',{state:{autoID:auto.id}});
+                }}>
                   <Row>
                     <img
                       src={auto.imagen}
