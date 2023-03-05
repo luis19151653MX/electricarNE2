@@ -2,16 +2,17 @@ import '../../css/login.css';
 import React from "react";
 import { Form, Button, Container, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
-    const [Login, setLogin] = React.useState({
+    const [login, setLogin] = React.useState({
         email: '',
-        password: '',
+        contraseña: '',
     });
 
      const onChangeLogin = (e) => {
          e.persist();
-         setLogin({ ...Login, [e.target.name]: e.target.value });
+         setLogin({ ...login, [e.target.name]: e.target.value });
      };
 
      //modal
@@ -21,24 +22,25 @@ function Login() {
 
 
     const loginC = async (e) => {
-        e?.preventDefault();
+        if (e && e.preventDefault()) e.preventDefault();
         const formData = new FormData();
-        formData.append("email", Login.email);
-        formData.append("password", Login.password);
-        try {
-          const response = await axios.post("http://127.0.0.1/electricarNE2/public/api/login", formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-              Accept: 'application/json'
+        formData.append("email", login.email);
+        formData.append("contraseña", login.contraseña);
+        await axios.post("http://127.0.0.1/electricarNE2/public/api/login", formData,
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Accept': 'application/json'
+                }
             }
-          });
-          if (response.status === 200) {
-            console.log('Correcto');
-          }
-        } catch (error) {
-          console.log(error);
-          alertLoginShow();
-        }
+        ).then(response => {
+            if (response.status === 200) {
+                console.log('Correcto');
+            }
+        }).catch(error => {
+            console.log(error);
+            alertLoginShow();
+        });
     }
 
     return (
@@ -54,7 +56,7 @@ function Login() {
                             placeholder="Ingresa tu email"
                             autoFocus
                             name="email"
-                            value={Login.email}
+                            value={login.email}
                             onChange={onChangeLogin}
                         />
                     </Form.Group>
@@ -69,8 +71,8 @@ function Login() {
                             maxLength="12"
                             minLength={8}
                             placeholder="Ingresa tu contraseña"
-                            name="password"
-                            value={Login.password}
+                            name="contraseña"
+                            value={login.contraseña}
                             onChange={onChangeLogin}
                         />
                     </Form.Group>
@@ -92,7 +94,7 @@ function Login() {
                     <Modal.Title>Advertencia</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>El correo o la contraseña no coinciden</p>
+                    <p>El correo o la contraseña no coinciden.</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={alertLoginClose}>Cerrar</Button>
