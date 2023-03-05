@@ -41,7 +41,7 @@ export default function IndexProduct() {
                       //imagen alternativa cuando no carga la imagen
                       onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
-                        currentTarget.src = "https://my.vsu.edu.ph/assets/img/green_spinner.gif";
+                        currentTarget.src = "https://www.evoximages.com/wp-content/uploads/2021/09/Forcolorspin2.gif";
                       }}
                       title={auto.modelo}
                       alt={auto.modelo + ". " + auto.año}

@@ -8624,15 +8624,14 @@ function Carrusel() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["default"].Item, {
       interval: 1000,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        "class": "col text-center",
+        className: "col text-center",
         style: {
           maxHeight: "500px",
           minHeight: "250px"
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          className: "img shadow-4",
+          className: "img shadow-4 d-block w-100",
           src: "http://www.diamondpearlz.com/wp-content/uploads/2015/12/banner-1.jpg",
-          "class": "d-block w-100",
           alt: "First slide",
           title: "Carousel1"
         })
@@ -8649,15 +8648,14 @@ function Carrusel() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["default"].Item, {
       interval: 1000,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        "class": "col text-center",
+        className: "col text-center",
         style: {
           maxHeight: "500px",
           minHeight: "250px"
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          className: "img shadow-4",
+          className: "img shadow-4 d-block w-100",
           src: "https://www.carrepairadelaidesa.com.au/wp-content/uploads/2021/10/Car-Engine-Repair-Replacement-Banner.png",
-          "class": "d-block w-100",
           alt: "Second slide",
           title: "Carousel2"
         })
@@ -8678,11 +8676,10 @@ function Carrusel() {
         minHeight: "320px"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        "class": "col text-center",
+        className: "col text-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          className: "img shadow-4",
+          className: "img shadow-4 d-block w-100",
           src: "https://la-pajarita.es/wp-content/uploads/productos-sostenibles-para-hosteleria-ecofriendly-lapajarita-mapelor.jpg",
-          "class": "d-block w-100",
           alt: "Third slide",
           title: "Carousel2"
         })
@@ -8802,7 +8799,7 @@ function IndexProduct() {
                 onError: function onError(_ref2) {
                   var currentTarget = _ref2.currentTarget;
                   currentTarget.onerror = null; // prevents looping
-                  currentTarget.src = "https://my.vsu.edu.ph/assets/img/green_spinner.gif";
+                  currentTarget.src = "https://www.evoximages.com/wp-content/uploads/2021/09/Forcolorspin2.gif";
                 },
                 title: auto.modelo,
                 alt: auto.modelo + ". " + auto.año,
