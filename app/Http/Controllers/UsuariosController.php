@@ -78,6 +78,10 @@ class UsuariosController extends Controller
         return $c1;
     }
 
+    public function login(){
+
+    }
+    
     /**
      * Display the specified resource.
      *

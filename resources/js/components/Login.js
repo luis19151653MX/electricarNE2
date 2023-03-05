@@ -7,23 +7,23 @@ function Login() {
     return (
         <div className="login-container">
             <div className="login-form-container">
-                <h2 className="login-heading">Login</h2>
+                <h2 className="login-heading">Iniciar sesión</h2>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" placeholder="Ingresa tu email" />
                         <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
+                            xxxx
                         </Form.Text>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Label>Contraseña</Form.Label>
+                        <Form.Control type="password" placeholder="Ingresa tu contraseña" />
                     </Form.Group>
                     <div className="login-button-container">
                         <Button variant="primary" type="submit">
-                            Submit
+                            Iniciar sesión
                         </Button>
                     </div>
                 </Form>
