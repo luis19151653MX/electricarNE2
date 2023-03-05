@@ -35,11 +35,11 @@
   .signup-link-container {
     margin-top: 20px;
     text-align: center;
-    color: #fff;
+    color: #080808;
   }
   
   .signup-link {
-    color: #fff;
+    color: #080808;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.2s ease-in-out;

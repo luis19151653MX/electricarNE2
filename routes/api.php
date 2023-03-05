@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\UsuariosController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +26,4 @@ Route::post('/get_producto', [ProductosController::class,'getProducto']);
 
 Route::post('/store_usuarios', [UsuariosController::class,'store']);
 Route::get('/c_usuarios', [UsuariosController::class,'c']);
+Route::post('/login', [UsuariosController::class, 'login']);
