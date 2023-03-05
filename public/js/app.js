@@ -8749,8 +8749,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Container.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _css_homeProducts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/homeProducts.css */ "./resources/css/homeProducts.css");
@@ -8813,36 +8812,50 @@ function IndexProduct() {
           children: "Nuestros productos"
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          className: "justify-content-md-center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), listProduct.map(function (auto) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
-              className: "cardProduct",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                  src: auto.imagen
-                  //imagen alternativa cuando no carga la imagen
-                  ,
-                  onError: function onError(_ref2) {
-                    var currentTarget = _ref2.currentTarget;
-                    currentTarget.onerror = null; // prevents looping
-                    currentTarget.src = "https://cdn-icons-png.flaticon.com/512/2878/2878966.png";
-                  },
-                  title: auto.modelo,
-                  alt: auto.modelo + ". " + auto.año
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                  children: auto.modelo
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h6", {
-                  children: "$" + auto.precio + " mxn"
-                })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      style: {
+        justifyContent: 'center'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        className: "justify-content-md-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), listProduct.map(function (auto) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            className: "cardProduct",
+            style: {
+              maxHeight: "350px",
+              minHeight: "250px",
+              height: "300px",
+              minWidth: "270px",
+              maxWidth: "280px"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                src: auto.imagen
+                //imagen alternativa cuando no carga la imagen
+                ,
+                onError: function onError(_ref2) {
+                  var currentTarget = _ref2.currentTarget;
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = "https://cdn-icons-png.flaticon.com/512/2878/2878966.png";
+                },
+                title: auto.modelo,
+                alt: auto.modelo + ". " + auto.año,
+                width: "100%",
+                height: "90%",
+                style: {
+                  maxHeight: "220px",
+                  minHeight: "180px"
+                }
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                children: auto.modelo
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h6", {
+                children: "$" + auto.precio + " mxn"
               })]
-            });
-          })]
-        })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
+          });
+        })]
       })
     })]
   });
@@ -16448,7 +16461,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cardProduct{\r\n    text-align: center;\r\n    border-color: #ebf4fa;\r\n}\r\n.cardProduct:hover{\r\n    background-color: #ebf4fa;\r\n    color: #006655;\r\n    cursor: pointer;   \r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".cardProduct {\r\n    text-align: center;\r\n  }\r\n  \r\n  .cardProduct:hover {\r\n    animation-name: changeColor;\r\n    animation-duration: 5s;\r\n    animation-iteration-count: infinite;\r\n    cursor: pointer;\r\n    transform: scale(1.05);\r\n  }\r\n  \r\n  @keyframes changeColor {\r\n    0% {\r\n      background-color: #ebf4fa;\r\n      color: #006655;\r\n      border-color: #006655;\r\n      border-width: 2px;\r\n    }\r\n  \r\n    50% {\r\n      background-color: #006655;\r\n      color: #ebf4fa;\r\n      border-color: #ebf4fa;\r\n      border-width: 5px;\r\n    }\r\n  \r\n    100% {\r\n      background-color: #ebf4fa;\r\n      color: #006655;\r\n      border-color: #006655;\r\n      border-width: 2px;\r\n    }\r\n  }\r\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
