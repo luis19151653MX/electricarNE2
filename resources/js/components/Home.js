@@ -5,11 +5,8 @@ import Carrusel from "./HomeCarousel";
 
 export default function Home() {
     return (
-        <Container fliud="true">
-            <div >
+        <Container fluid="true">
                 <Carrusel></Carrusel>
-            </div>
-            
             <div>
                 <br></br>
             </div>

@@ -11,7 +11,8 @@ import Login from './Login';
 export default function Main() {
     return (
         <div className='App'>
-            <Container fluid>
+            <Container fluid style={{margin: 0,
+  padding: 0}}>
                 <BrowserRouter>
                 <Routes>
                     <Route path="/electricarNE2/public"  element={<Navigation />} >
