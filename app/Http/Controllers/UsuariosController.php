@@ -73,7 +73,7 @@ class UsuariosController extends Controller
         $usuarios->save();
     }
 
-    public function c(Request $request){
+    public function c(){
         $c1=new usuarios();
         $c1->id=1;
         $c1->nombre='cass';
@@ -84,6 +84,7 @@ class UsuariosController extends Controller
         $c1->fecha_cumpleaños='01/01/2001';
         $c1->tipo='cliente';
         $c1->save();
+        return $c1;
     }
 
     /**
