@@ -33,14 +33,17 @@ function Login() {
                         />
                     </Form.Group>
 
+                    <br/>
+                    
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Contraseña</Form.Label>
                         <Form.Control
                             required
                             type="password"
-
+                            maxLength="12"
+                            minLength={8}
                             placeholder="Ingresa tu contraseña"
-                            name="pasword"
+                            name="password"
                             value={Login.password}
                             onChange={onChangeLogin}
                         />
