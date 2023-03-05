@@ -1,18 +1,16 @@
 import React from 'react';
-import IndexProduct from './IndexProducts';
+import { Container } from 'react-bootstrap';
+import HomeProducts from './HomeProducts';
+import Carrusel from "./HomeCarousel";
 
-function Example() {
+export default function Home() {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <IndexProduct></IndexProduct>
-                    </div>
-                </div>
+        <Container fluid="true">
+                <Carrusel></Carrusel>
+            <div>
+                <br></br>
             </div>
-        </div>
+            <HomeProducts></HomeProducts>
+        </Container>
     );
 }
-
-export default Example;

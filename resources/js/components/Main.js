@@ -2,20 +2,23 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import {BrowserRouter,Route,Routes} from "react-router-dom";
-import Example from './Example';
+
 import Home from './Home';
-import Login from './Login';
 import Navigation from './Navigation';
+import ProductCard from './ProductCard';
+import Login from './Login';
+
 export default function Main() {
     return (
         <div className='App'>
-            <Container>
+            <Container fluid style={{margin: 0,
+  padding: 0}}>
                 <BrowserRouter>
                 <Routes>
                     <Route path="/electricarNE2/public"  element={<Navigation />} >
                         <Route index element={<Home />} />
                         <Route path="Home" element={<Home />} />
-                        <Route path="Example" element={<Example />} />
+                        <Route path="ProductCard" element={<ProductCard />} />
                         <Route path="Login" element={<Login />} />
                     </Route>
                 </Routes>
