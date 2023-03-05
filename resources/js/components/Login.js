@@ -4,6 +4,17 @@ import { Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function Login() {
+    const [Login, setLogin] = React.useState({
+        email: '',
+        password: '',
+        flag: false
+    });
+
+    const onChangeLogin = (e) => {
+        e.persist();
+        setLogin({ ...Login, [e.target.name]: e.target.value });
+    };
+
     return (
         <div className="login-container">
             <div className="login-form-container">
@@ -11,15 +22,28 @@ function Login() {
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Ingresa tu email" />
-                        <Form.Text className="text-muted">
-                            xxxx
-                        </Form.Text>
+                        <Form.Control
+                            required
+                            type="email"
+                            placeholder="Ingresa tu email"
+                            autoFocus
+                            name="email"
+                            value={Login.email}
+                            onChange={onChangeLogin}
+                        />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Contraseña</Form.Label>
-                        <Form.Control type="password" placeholder="Ingresa tu contraseña" />
+                        <Form.Control
+                            required
+                            type="password"
+
+                            placeholder="Ingresa tu contraseña"
+                            name="pasword"
+                            value={Login.password}
+                            onChange={onChangeLogin}
+                        />
                     </Form.Group>
                     <div className="login-button-container">
                         <Button variant="primary" type="submit">
