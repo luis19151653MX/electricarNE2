@@ -8726,6 +8726,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+//idea para reproducir sonido: modal que pregunte si desea permitir sonido en la pagina
 
 
 
@@ -8801,7 +8802,7 @@ function IndexProduct() {
                 onError: function onError(_ref2) {
                   var currentTarget = _ref2.currentTarget;
                   currentTarget.onerror = null; // prevents looping
-                  currentTarget.src = "https://cdn-icons-png.flaticon.com/512/2878/2878966.png";
+                  currentTarget.src = "https://my.vsu.edu.ph/assets/img/green_spinner.gif";
                 },
                 title: auto.modelo,
                 alt: auto.modelo + ". " + auto.año,
@@ -16489,7 +16490,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cardProduct {\r\n    text-align: center;\r\n  }\r\n  \r\n  .cardProduct:hover {\r\n    animation-name: changeColor;\r\n    animation-duration: 5s;\r\n    animation-iteration-count: infinite;\r\n    cursor: pointer;\r\n    transform: scale(1.05);\r\n  }\r\n  \r\n  @keyframes changeColor {\r\n    0% {\r\n      background-color: #ebf4fa;\r\n      color: #006655;\r\n      border-color: #006655;\r\n      border-width: 2px;\r\n    }\r\n  \r\n    50% {\r\n      background-color: #006655;\r\n      color: #ebf4fa;\r\n      border-color: #ebf4fa;\r\n      border-width: 5px;\r\n    }\r\n  \r\n    100% {\r\n      background-color: #ebf4fa;\r\n      color: #006655;\r\n      border-color: #006655;\r\n      border-width: 2px;\r\n    }\r\n  }\r\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".cardProduct {\r\n    text-align: center;\r\n  }\r\n  \r\n  .cardProduct:hover {\r\n    animation-name: changeColor;\r\n    animation-duration: 5s;\r\n    animation-iteration-count: infinite;\r\n    cursor: pointer;\r\n    transform: scale(1.05);\r\n  }\r\n  \r\n  @keyframes changeColor {\r\n    0% {\r\n      background-color: #ebf4fa;\r\n      color: #006655;\r\n      border-color: #006655;\r\n      border-width: 1px;\r\n    }\r\n  \r\n    50% {\r\n      background-color: #006655;\r\n      color: #ebf4fa;\r\n      border-color: #ebf4fa;\r\n      border-width: 1px;\r\n    }\r\n  \r\n    100% {\r\n      background-color: #ebf4fa;\r\n      color: #006655;\r\n      border-color: #006655;\r\n      border-width: 1px;\r\n    }\r\n  }\r\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

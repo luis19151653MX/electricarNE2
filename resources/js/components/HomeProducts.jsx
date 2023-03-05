@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "../../css/homeProducts.css";
+//idea para reproducir sonido: modal que pregunte si desea permitir sonido en la pagina
 
 export default function IndexProduct() {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ export default function IndexProduct() {
                       //imagen alternativa cuando no carga la imagen
                       onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
-                        currentTarget.src = "https://cdn-icons-png.flaticon.com/512/2878/2878966.png";
+                        currentTarget.src = "https://my.vsu.edu.ph/assets/img/green_spinner.gif";
                       }}
                       title={auto.modelo}
                       alt={auto.modelo + ". " + auto.año}
