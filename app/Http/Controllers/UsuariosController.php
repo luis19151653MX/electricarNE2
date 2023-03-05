@@ -37,7 +37,7 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-       /* $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'nombre' => 'required|max:100',
             'contraseña' => 'required|min:8',
             'telefono' => 'required|max:12',
@@ -49,25 +49,16 @@ class UsuariosController extends Controller
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
-        }*/
+        }
         
         $usuarios = usuarios::create([
-            /*'nombre' => $request->nombre,
+            'nombre' => $request->nombre,
             'contraseña' => $request->contraseña,
             'telefono' => $request->telefono,
             'direccion' => $request->direccion,
             'email' => $request->email,
-            'facha_cumpleaños' => $request->fecha_cumpleaños,
-            'tipo' => $request->tipo*/
-
-            
-            'nombre' => 'Cassndra',
-            'contraseña' => 'jnhbgvfc',
-            'telefono' => '4491020947',
-            'direccion' => 'fray luis de leon',
-            'email' => 'cass@gmail.com',
-            'facha_cumpleaños' => 01/01/2001,
-            'tipo' => 'cliente'
+            'fecha_cumpleaños' => $request->fecha_cumpleaños,
+            'tipo' => $request->tipo
 
         ]);
         $usuarios->save();
@@ -81,7 +72,7 @@ class UsuariosController extends Controller
         $c1->telefono='4491020947';
         $c1->direccion='fray luis de leon';
         $c1->email='cass@gmail.com';
-        $c1->fecha_cumpleaños='01/01/2001';
+        $c1->fecha_cumpleaños='2001-01-01';
         $c1->tipo='cliente';
         $c1->save();
         return $c1;
