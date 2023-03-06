@@ -21,8 +21,6 @@ class CreateCotizacionesTable extends Migration
             $table->foreign('venta_id')->references('id')->on('ventas');
             $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('usuarios');
-            $table->unsignedBigInteger('productos_id');
-            $table->foreign('productos_id')->references('id')->on('productos');
             $table->timestamps();
         });
     }

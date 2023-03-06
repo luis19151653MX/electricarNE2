@@ -12,4 +12,16 @@ class lista_cotizaciones extends Model
     protected $fillable = [
         'id','status', 'cantidad', 'cotizacion_id', 'descuentos_id', 'productos_id'
     ];
+
+    public function cotizaciones(){
+        return $this->belongsTo(cotizaciones::class);
+    }
+
+    public function descuentos(){
+        return $this->belongsTo(descuentos::class);
+    }
+
+    public function productos(){
+        return $this->belongsTo(productos::class);
+    }
 }
