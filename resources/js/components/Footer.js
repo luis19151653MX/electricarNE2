@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import '../../css/footer.css';
+import facebook from '../../imagenes/facebook.png';
 
 const Footer = () => {
     return (
@@ -11,7 +12,7 @@ const Footer = () => {
                         <div style={{ textAlign: "center" }}>
                             <marquee direction="left" SCROLLDELAY="30">
                                 <img
-                                    src="../../imagenes/coche-icon-gif.gif"
+                                    src='../resources/imagenes/coche-icon-gif.gif'
                                     title="Logo"
                                     alt="Logo del Proyecto"
                                     width="130"
@@ -27,7 +28,7 @@ const Footer = () => {
                                     target="_blank"
                                     style={{ marginRight: 35 + "px" }}>
                                     <img
-                                        src="../../imagenes/gmail.png"
+                                        src='../resources/imagenes/gmail.png'
                                         title="Gmail"
                                         alt="Gmail"
                                         width="45"
@@ -38,7 +39,7 @@ const Footer = () => {
                                     title="facebook"
                                     target="_blank">
                                     <img
-                                        src="../../imagenes/facebook.png"
+                                        src='../resources/imagenes/facebook.png'
                                         title="Facebook"
                                         alt="Facebook"
                                         width="45"
@@ -64,7 +65,7 @@ const Footer = () => {
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"
                             style={{ fontSize: "20" + "px" }}>
                             <img
-                                src="/react-example/Images/Cookie.png"
+                                src='../resources/imagenes/Cookie.png'
                                 title="cookies"
                                 alt="Coookies"
                                 width="35"
