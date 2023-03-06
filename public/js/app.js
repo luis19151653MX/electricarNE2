@@ -8817,7 +8817,7 @@ function IndexProduct() {
                 children: "$" + auto.precio + " mxn"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
-          });
+          }, auto.id);
         })]
       })
     })]
