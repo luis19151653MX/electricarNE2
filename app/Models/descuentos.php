@@ -10,6 +10,6 @@ class descuentos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id','codigo', 'porcentaje', 'fecha_caducidad', 'pv_id', 'usuario_id'
+        'id','codigo', 'porcentaje', 'fecha_caducidad', 'pv_id', 'usuario_id', 'status'
     ];
 }
