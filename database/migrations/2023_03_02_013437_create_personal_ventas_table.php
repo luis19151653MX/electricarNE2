@@ -17,9 +17,9 @@ class CreatePersonalVentasTable extends Migration
             $table->id();
             $table->string("nombre");
             $table->string("contraseña");
-            $table->string("telefono");
+            $table->string("telefono")->unique();;
             $table->string("direccion");
-            $table->string("email");
+            $table->string("email")->unique();;
             $table->timestamps();
         });
     }
