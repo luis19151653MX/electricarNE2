@@ -84,8 +84,8 @@ function Login() {
                 </Form>
                 <div className="signup-link-container">
                     ¿No tienes una cuenta?{" "}
-                    <Link to="/signup" className="signup-link">
-                        Registrate aquí
+                    <Link to="/electricarNE2/public/Register" className="signup-link">
+                        Regístrate aquí
                     </Link>
                 </div>
             </div>

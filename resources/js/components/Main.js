@@ -7,6 +7,7 @@ import Home from './Home';
 import Navigation from './Navigation';
 import ProductCard from './ProductCard';
 import Login from './Login';
+import Register from './Register';
 
 export default function Main() {
     return (
@@ -20,6 +21,7 @@ export default function Main() {
                         <Route path="Home" element={<Home />} />
                         <Route path="ProductCard" element={<ProductCard />} />
                         <Route path="Login" element={<Login />} />
+                        <Route path="Register" element={<Register />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

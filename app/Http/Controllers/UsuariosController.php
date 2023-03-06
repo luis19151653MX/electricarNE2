@@ -46,7 +46,7 @@ class UsuariosController extends Controller
             'direccion' => 'required|max:200',
             'email' => 'required|max:200',
             'fecha_cumpleaños' => 'required|max:20',
-            'tipo' => ['required', Rule::in(['prospecto', 'cliente'])]
+            //'tipo' => ['required', Rule::in(['prospecto', 'cliente'])]
         ]);
 
         if ($validator->fails()) {
@@ -60,7 +60,7 @@ class UsuariosController extends Controller
             'direccion' => $request->direccion,
             'email' => $request->email,
             'fecha_cumpleaños' => $request->fecha_cumpleaños,
-            'tipo' => $request->tipo
+            //'tipo' => $request->tipo
 
         ]);
         $usuarios->save();
