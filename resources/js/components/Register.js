@@ -57,7 +57,7 @@ function Register() {
 
     return (
         <div className="login-container">
-            <div className="login-form-container">
+            <div className="register-form-container">
                 <h2 className="login-heading">Regístrate</h2>
                 <Form onSubmit={RegisterC}>
                     <Row >
