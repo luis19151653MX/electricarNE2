@@ -5,11 +5,10 @@ export default function Carrusel() {
     return (
         <Carousel fade style={{maxHeight:"600px",minHeight:"320px"}}>
             <Carousel.Item interval={1000}>
-                <div class="col text-center" style={{maxHeight:"500px" ,minHeight:"250px"}}>
+                <div className="col text-center" style={{maxHeight:"500px" ,minHeight:"250px"}}>
                     <img
-                        className="img shadow-4"
+                        className="img shadow-4 d-block w-100"
                         src="http://www.diamondpearlz.com/wp-content/uploads/2015/12/banner-1.jpg"
-                        class="d-block w-100"
                         alt="First slide"
                         title="Carousel1"
                     />
@@ -20,11 +19,10 @@ export default function Carrusel() {
             </Carousel.Item>
 
             <Carousel.Item interval={1000}>
-                <div class="col text-center" style={{maxHeight:"500px",minHeight:"250px"}} >
+                <div className="col text-center" style={{maxHeight:"500px",minHeight:"250px"}} >
                     <img
-                        className="img shadow-4"
+                        className="img shadow-4 d-block w-100"
                         src="https://www.carrepairadelaidesa.com.au/wp-content/uploads/2021/10/Car-Engine-Repair-Replacement-Banner.png"
-                        class="d-block w-100"
                         alt="Second slide"
                         title="Carousel2"
                     />
@@ -35,11 +33,10 @@ export default function Carrusel() {
             </Carousel.Item>
 
             <Carousel.Item interval={1000} style={{maxHeight:"500px",minHeight:"320px"}}>
-                <div class="col text-center" >
+                <div className="col text-center" >
                     <img
-                        className="img shadow-4"
+                        className="img shadow-4 d-block w-100"
                         src="https://la-pajarita.es/wp-content/uploads/productos-sostenibles-para-hosteleria-ecofriendly-lapajarita-mapelor.jpg"
-                        class="d-block w-100"
                         alt="Third slide"
                         title="Carousel2"
                     />

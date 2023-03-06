@@ -1,0 +1,4 @@
+.navbar-blur {
+    background-image: linear-gradient(to bottom, #d6ece9 0%, rgba(255, 255, 255, 0.8) 100%);
+    backdrop-filter: blur(5px);
+}

@@ -1,12 +1,13 @@
 import React from 'react'
 import { Outlet, Link } from 'react-router-dom';
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap'
+import "../../css/navigation.css";
 
 export default function Navigation(){
     return (
         <Container fluid>
             <Navbar fixed="top" collapseOnSelect expand="lg" variant="light"
-                style={{ background: 'linear-gradient(#ebf4fa, #FFFFFF)' }}>
+                className='navbar-blur'>
                 <Container >
                     <Navbar.Brand style={{ color: "#006655", fontSize: 18 + "pt" }} as={Link} to="/electricarNE2/public/Home" title="Logo">
                         Electricar

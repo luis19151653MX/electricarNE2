@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "../../css/homeProducts.css";
+//idea para reproducir sonido: modal que pregunte si desea permitir sonido en la pagina
 
 export default function IndexProduct() {
   const navigate = useNavigate();
@@ -29,18 +30,19 @@ export default function IndexProduct() {
           {
             listProduct.map((auto) => {
               return (
-                <Col className="cardProduct" style={{ maxHeight: "350px", minHeight: "250px", height: "300px", minWidth: "270px", maxWidth: "280px" }} 
+                <Col key={auto.id} className="cardProduct" style={{ maxHeight: "350px", minHeight: "250px", height: "300px", minWidth: "270px", maxWidth: "280px" }} 
                 onClick={() => {
                   console.log(auto.id);
                   navigate('/electricarNE2/public/ProductCard',{state:{autoID:auto.id}});
                 }}>
+                  <br></br>
                   <Row>
                     <img
                       src={auto.imagen}
                       //imagen alternativa cuando no carga la imagen
                       onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
-                        currentTarget.src = "https://cdn-icons-png.flaticon.com/512/2878/2878966.png";
+                        currentTarget.src = "https://www.evoximages.com/wp-content/uploads/2021/09/Forcolorspin2.gif";
                       }}
                       title={auto.modelo}
                       alt={auto.modelo + ". " + auto.año}
