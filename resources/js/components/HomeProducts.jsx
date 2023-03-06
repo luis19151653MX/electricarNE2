@@ -35,6 +35,7 @@ export default function IndexProduct() {
                   console.log(auto.id);
                   navigate('/electricarNE2/public/ProductCard',{state:{autoID:auto.id}});
                 }}>
+                  <br></br>
                   <Row>
                     <img
                       src={auto.imagen}
