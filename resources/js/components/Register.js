@@ -1,6 +1,6 @@
 import '../../css/login.css';
 import React from "react";
-import { Form, Button, Container, Modal } from "react-bootstrap";
+import { Form, Button, Container, Modal, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -60,104 +60,105 @@ function Register() {
             <div className="login-form-container">
                 <h2 className="login-heading">Regístrate</h2>
                 <Form onSubmit={RegisterC}>
-                    <Form.Group controlId="formBasicNombre">
-                        <Form.Label>Nombre</Form.Label>
-                        <Form.Control
-                            required
-                            type="text"
-                            maxLength="250"
-                            minLength={4}
-                            placeholder="Ingresa tu nombre"
-                            autoFocus
-                            name="nombre"
-                            value={register.nombre}
-                            onChange={onChangeRegister}
-                        />
-                    </Form.Group>
+                    <Row >
+                        <Form.Group as={Col} controlId="formBasicNombre">
+                            <Form.Label>Nombre</Form.Label>
+                            <Form.Control
+                                required
+                                type="text"
+                                maxLength="250"
+                                minLength={4}
+                                placeholder="Ingresa tu nombre"
+                                autoFocus
+                                name="nombre"
+                                value={register.nombre}
+                                onChange={onChangeRegister}
+                            />
+                        </Form.Group>
 
+                        <br />
+
+                        <Form.Group as={Col} controlId="formBasicFechaCumpleaños">
+                            <Form.Label>Fecha de cumpleaños</Form.Label>
+                            <Form.Control
+                                required
+                                type="text"
+                                maxLength="12"
+                                minLength={4}
+                                placeholder="Ej. 2020/12/02"
+                                name="fecha_cumpleaños"
+                                value={register.fecha_cumpleaños}
+                                onChange={onChangeRegister}
+                            />
+                        </Form.Group>
+                    </Row>
                     <br />
+                    <Row>
+                        <Form.Group as={Col} controlId="formBasicDireccion">
+                            <Form.Label>Dirección</Form.Label>
+                            <Form.Control
+                                required
+                                type="text"
+                                maxLength="250"
+                                minLength={4}
+                                placeholder="Ingresa tu dirección"
+                                name="direccion"
+                                value={register.direccion}
+                                onChange={onChangeRegister}
+                            />
+                        </Form.Group>
 
-                    <Form.Group controlId="formBasicFechaCumpleaños">
-                        <Form.Label>Fecha de cumpleaños</Form.Label>
-                        <Form.Control
-                            required
-                            type="text"
-                            maxLength="12"
-                            minLength={4}
-                            placeholder="Ej. 2020/12/02"
-                            name="fecha_cumpleaños"
-                            value={register.fecha_cumpleaños}
-                            onChange={onChangeRegister}
-                        />
-                    </Form.Group>
+                        <br />
 
-                    <br />
+                        <Form.Group as={Col} controlId="formBasicTelefono">
+                            <Form.Label>Teléfono</Form.Label>
+                            <Form.Control
+                                required
+                                type="number"
+                                min="1"
+                                placeholder="Ingresa tu teléfono"
+                                name="telefono"
+                                value={register.telefono}
+                                onChange={onChangeRegister}
+                            />
+                        </Form.Group>
+                        </Row>
+                        <br />
+                        <Row>
+                        <Form.Group as={Col} controlId="formBasicEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control
+                                required
+                                type="email"
+                                placeholder="Ej. nombre@gmail.com"
+                                autoFocus
+                                name="email"
+                                value={register.email}
+                                onChange={onChangeRegister}
+                            />
+                        </Form.Group>
 
-                    <Form.Group controlId="formBasicDireccion">
-                        <Form.Label>Dirección</Form.Label>
-                        <Form.Control
-                            required
-                            type="text"
-                            maxLength="250"
-                            minLength={4}
-                            placeholder="Ingresa tu dirección"
-                            name="direccion"
-                            value={register.direccion}
-                            onChange={onChangeRegister}
-                        />
-                    </Form.Group>
+                        <br />
 
-                    <br />
-
-                    <Form.Group controlId="formBasicTelefono">
-                        <Form.Label>Teléfono</Form.Label>
-                        <Form.Control
-                            required
-                            type="number"
-                            min="1"
-                            placeholder="Ingresa tu teléfono"
-                            name="telefono"
-                            value={register.telefono}
-                            onChange={onChangeRegister}
-                        />
-                    </Form.Group>
-
-                    <br />
-
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control
-                            required
-                            type="email"
-                            placeholder="Ej. nombre@gmail.com"
-                            autoFocus
-                            name="email"
-                            value={register.email}
-                            onChange={onChangeRegister}
-                        />
-                    </Form.Group>
-
-                    <br />
-
-                    <Form.Group controlId="formBasicContraseña">
-                        <Form.Label>Contraseña</Form.Label>
-                        <Form.Control
-                            required
-                            type="password"
-                            maxLength="12"
-                            minLength={8}
-                            placeholder="Ingrese tu contraseña"
-                            name="contraseña"
-                            value={register.contraseña}
-                            onChange={onChangeRegister}
-                        />
-                    </Form.Group>
-
-                    <div className="login-button-container">
-                        <Button variant="primary" type="submit">
-                            Regístrase
-                        </Button>
-                    </div>
+                        <Form.Group as={Col} controlId="formBasicContraseña">
+                            <Form.Label>Contraseña</Form.Label>
+                            <Form.Control
+                                required
+                                type="password"
+                                maxLength="12"
+                                minLength={8}
+                                placeholder="Ingrese tu contraseña"
+                                name="contraseña"
+                                value={register.contraseña}
+                                onChange={onChangeRegister}
+                            />
+                        </Form.Group>
+                        </Row>
+                        <div className="login-button-container">
+                            <Button variant="primary" type="submit">
+                                Regístrase
+                            </Button>
+                        </div>
                 </Form>
             </div>
             <Modal show={showSaveUsuario} onHide={saveUsuarioClose}>
@@ -165,7 +166,7 @@ function Register() {
                     <Modal.Title>Guardado</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Se guardo correctamente tu empleado.</p>
+                    <p>Te registrarse correctamente.</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={saveUsuarioClose}>Cerrar</Button>
