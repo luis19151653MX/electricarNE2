@@ -39,6 +39,7 @@
   <script
   src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
   crossorigin></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=ATopRVi_zcgIG4KmDjOQUzpKCm2yqwnNN4Zcon2ETEwWn2Q95xtM7SYeIHxuDUeusD_6GRxnFy6AMPhS"></script>
 </body>
     <!--
         @if (Route::has('login'))

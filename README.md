@@ -68,10 +68,15 @@ php artisan migrate:fresh //obtienes una nueva version de la base de datos
 npm install axios
 npm add react-router-dom  
 
-
-
-hola
-
+//uso de paypal
+npm install @paypal/react-paypal-js
+correo: electricar19151653@gmail.com
+contraseña paypal: electricar@
+https://developer.paypal.com/dashboard/ aqui puedes ver tus credenciles de prueba
+y agregas el script al body de welcome blade: 
+<script src="https://www.paypal.com/sdk/js?client-id=ATopRVi_zcgIG4KmDjOQUzpKCm2yqwnNN4Zcon2ETEwWn2Q95xtM7SYeIHxuDUeusD_6GRxnFy6AMPhS"></script>
+Cuentas de prueba: https://developer.paypal.com/dashboard/accounts?event=createSuccess
+en este caso puedes usar esta: usuarioelectricar@gmail.com contraseña:electricar@
 
 
 
