@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import '../../css/footer.css';
-import facebook from '../../imagenes/facebook.png';
 
 const Footer = () => {
     return (

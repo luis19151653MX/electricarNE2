@@ -10,6 +10,7 @@ export default function Navigation(){
                 className='navbar-blur'>
                 <Container >
                     <Navbar.Brand style={{ color: "#006655", fontSize: 18 + "pt" }} as={Link} to="/electricarNE2/public/Home" title="Logo">
+                    <img src='../resources/imagenes/coche-icon-gif.gif' title="Logo" alt="Logo del proyecto" width="52" height="46" style={{ marginRight:'15px' }}/> {' '}
                         Electricar
                     </Navbar.Brand>
                     <Navbar.Brand style={{ color: "#006655", fontSize: 18 + "pt" }} as={Link} to="/electricarNE2/public/Login" title="Logo">
