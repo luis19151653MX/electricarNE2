@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import HomeProducts from './HomeProducts';
 import Carrusel from "./HomeCarousel";
+import Footer from "./Footer";
 
 export default function Home() {
     return (
@@ -11,6 +12,8 @@ export default function Home() {
                 <br></br>
             </div>
             <HomeProducts></HomeProducts>
+
+            <Footer></Footer>
         </Container>
     );
 }
