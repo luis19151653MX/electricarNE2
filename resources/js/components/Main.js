@@ -9,6 +9,7 @@ import ProductCard from './ProductCard';
 import Login from './Login';
 import Register from './Register';
 import Carrito from './Carrito';
+import HomeUC from "./HomeUC";
 
 export default function Main() {
     return (
@@ -24,6 +25,7 @@ export default function Main() {
                         <Route path="Login" element={<Login />} />
                         <Route path="Register" element={<Register />} />
                         <Route path="Carrito" element={<Carrito />} />
+                        <Route path="HomeUC" element={<HomeUC />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
