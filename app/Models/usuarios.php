@@ -10,7 +10,7 @@ class usuarios extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre', 'contraseña', 'telefono', 'direccion', 'email', 'fecha_cumpleaños', 'tipo'
+        'id','nombre', 'contraseña', 'telefono', 'direccion', 'email', 'fecha_cumpleaños', 'tipo'
     ];
 
 }
