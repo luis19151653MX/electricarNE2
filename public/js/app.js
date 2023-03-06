@@ -9136,15 +9136,6 @@ function Navigation() {
           to: "/electricarNE2/public/Login",
           title: "Logo",
           children: "Login"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Brand, {
-          style: {
-            color: "#006655",
-            fontSize: 18 + "pt"
-          },
-          as: react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link,
-          to: "/electricarNE2/public/Register",
-          title: "Logo",
-          children: "registrase"
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
