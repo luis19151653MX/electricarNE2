@@ -17,9 +17,9 @@ class CreateUsuariosTable extends Migration
             $table->id();
             $table->string("nombre");
             $table->string("contraseña");
-            $table->string("telefono");
+            $table->string("telefono")->unique();
             $table->string("direccion");
-            $table->string("email");
+            $table->string("email")->unique();
             $table->date("fecha_cumpleaños");
             $table->enum('tipo',['prospecto','cliente'])->default('prospecto');
             $table->timestamps();
