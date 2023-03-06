@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class carritos_compras extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'id','usuario_id', 'status', 'fecha_ultima_modificacion'
+    ];
 }

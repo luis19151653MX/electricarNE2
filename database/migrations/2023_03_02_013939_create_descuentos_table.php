@@ -22,6 +22,7 @@ class CreateDescuentosTable extends Migration
             $table->foreign('pv_id')->references('id')->on('personal_ventas');
             $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->char("status");//A activo o I inactivo
             $table->timestamps();
         });
     }
