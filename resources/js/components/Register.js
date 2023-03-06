@@ -57,7 +57,7 @@ function Register() {
 
     return (
         <div className="login-container">
-            <div className="login-form-container">
+            <div className="register-form-container">
                 <h2 className="login-heading">Regístrate</h2>
                 <Form onSubmit={RegisterC}>
                     <Row >
@@ -75,11 +75,10 @@ function Register() {
                                 onChange={onChangeRegister}
                             />
                         </Form.Group>
-
                         <br />
 
                         <Form.Group as={Col} controlId="formBasicFechaCumpleaños">
-                            <Form.Label>Fecha de cumpleaños</Form.Label>
+                            <Form.Label>Fecha de Nacimiento</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
@@ -156,7 +155,7 @@ function Register() {
                         </Row>
                         <div className="login-button-container">
                             <Button variant="primary" type="submit">
-                                Regístrase
+                                Registrar
                             </Button>
                         </div>
                 </Form>
@@ -166,7 +165,7 @@ function Register() {
                     <Modal.Title>Guardado</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Te registrarse correctamente.</p>
+                    <p>Te registraste correctamente.</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={saveUsuarioClose}>Cerrar</Button>

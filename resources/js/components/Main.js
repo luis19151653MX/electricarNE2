@@ -8,6 +8,7 @@ import Navigation from './Navigation';
 import ProductCard from './ProductCard';
 import Login from './Login';
 import Register from './Register';
+import Carrito from './Carrito';
 
 export default function Main() {
     return (
@@ -22,6 +23,7 @@ export default function Main() {
                         <Route path="ProductCard" element={<ProductCard />} />
                         <Route path="Login" element={<Login />} />
                         <Route path="Register" element={<Register />} />
+                        <Route path="Carrito" element={<Carrito />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

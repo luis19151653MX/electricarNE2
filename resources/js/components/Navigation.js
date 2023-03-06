@@ -15,6 +15,9 @@ export default function Navigation(){
                     <Navbar.Brand style={{ color: "#006655", fontSize: 18 + "pt" }} as={Link} to="/electricarNE2/public/Login" title="Logo">
                         Login
                     </Navbar.Brand>
+                    <Navbar.Brand style={{ color: "#006655", fontSize: 18 + "pt" }} as={Link} to="/electricarNE2/public/Carrito" title="Logo">
+                        Carrito
+                    </Navbar.Brand>
                 </Container>
             </Navbar>
             <section>
