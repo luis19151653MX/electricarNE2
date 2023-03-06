@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,6 +13,11 @@ import HomeUC from "./HomeUC";
 import Profile from "./Profile";
 
 export default function Main() {
+
+    const [start, setStart] = useState(false);
+    window.onload = function cargando() {
+        localStorage.setItem("usuarioId",null);
+    }
     return (
         <div className='App'>
             <Container fluid style={{
