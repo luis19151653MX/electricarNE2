@@ -10,6 +10,7 @@ import Login from './Login';
 import Register from './Register';
 import Carrito from './Carrito';
 import HomeUC from "./HomeUC";
+import HomeUV from "./HomeUV";
 import Profile from "./Profile";
 
 export default function Main() {
@@ -35,6 +36,7 @@ export default function Main() {
                             <Route path="Carrito" element={<Carrito />} />
                             <Route path="HomeUC" element={<HomeUC />} />
                             <Route path="Profile" element={<Profile />} />
+                            <Route path="HomeUV" element={<HomeUV />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>
