@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\usuarios;
 use App\Models\carritos_compras;
+use App\Models\lista_carritos;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,10 +19,8 @@ class UsuariosController extends Controller
      */
     public function index(Request $request)
     {
-       // $usuario= usuarios::get();
-        $usuarios= carritos_compras::find($request->usuario_id)->usuarios;
-       // $usuarios->get();
-      // $usuario = usuarios::find(1)->carrito_compras;
+        $id = $request->usuario_id;
+        $usuarios = carritos_compras::where('usuario_id', $id)->first();
         return $usuarios;
     }
 
@@ -90,15 +89,12 @@ class UsuariosController extends Controller
         $credentials = $request->only('email', 'contraseña');
 
         $usuario = DB::table('usuarios')->where('email', $credentials['email'])->first();
-        
-        if ($usuario && $usuario->email===$credentials['email'] && $usuario->contraseña===$credentials['contraseña']) {
-            return response()->json([$usuario], 200);
 
+        if ($usuario && $usuario->email === $credentials['email'] && $usuario->contraseña === $credentials['contraseña']) {
+            return response()->json([$usuario], 200);
         } else {
             return response()->json(['Las credenciales no son válidas.'], 401);
         }
-
-
     }
 
     /**
