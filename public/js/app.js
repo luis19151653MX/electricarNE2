@@ -10032,7 +10032,7 @@ var Footer = function Footer() {
               textAlign: "center"
             },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("marquee", {
-              direction: "left",
+              direction: "right",
               SCROLLDELAY: "30",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                 src: "../resources/imagenes/coche-icon-gif.gif",

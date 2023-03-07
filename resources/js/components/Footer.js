@@ -9,7 +9,7 @@ const Footer = () => {
                 <div class="container pt-5 border-bottom">
                     <div class="row text-center">
                         <div style={{ textAlign: "center" }}>
-                            <marquee direction="left" SCROLLDELAY="30">
+                            <marquee direction="right" SCROLLDELAY="30">
                                 <img
                                     src='../resources/imagenes/coche-icon-gif.gif'
                                     title="Logo"
