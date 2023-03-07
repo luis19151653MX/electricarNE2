@@ -3,11 +3,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Paypal from "./Paypal";
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Carrito() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (localStorage.getItem("usuarioId") === null) {
+        if (sessionStorage.getItem("usuarioId") === null) {
             navigate('/electricarNE2/public/Login');
         }
     }, [navigate]);
@@ -15,7 +16,7 @@ export default function Carrito() {
     return (
         <>
             {
-                localStorage.getItem("usuarioId") !== null && (
+                sessionStorage.getItem("usuarioId") !== null && (
                     <Row>
                         <Col>
                         </Col>
@@ -26,9 +27,9 @@ export default function Carrito() {
                 )
             }
         </>
+
     );
 }
-
 
 /*<Row>
                             <Col>
