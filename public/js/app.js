@@ -10019,7 +10019,7 @@ function Carrito() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ Footer)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Container.js");
@@ -10030,14 +10030,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Footer = function Footer() {
+function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
     fluid: true,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("footer", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        "class": "container pt-5 border-bottom",
+        className: "container pt-5 border-bottom",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          "class": "row text-center",
+          className: "row text-center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             style: {
               textAlign: "center"
@@ -10054,12 +10054,12 @@ var Footer = function Footer() {
               })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-            "class": "mb-4 font-weight-bold text-uppercase",
+            className: "mb-4 font-weight-bold text-uppercase",
             children: "Contactos"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
-            "class": "list-group",
+            className: "list-group",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
-              "class": "list-group-item bg-transparent border-0 p-0 mb-2",
+              className: "list-group-item bg-transparent border-0 p-0 mb-2",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
                 href: "https://www.google.com/intl/es-419/gmail/about/",
                 title: "gmail",
@@ -10103,12 +10103,12 @@ var Footer = function Footer() {
         children: "Somos un negocio electr\xF3nico especializado en la venta de carros modificados con motores el\xE9ctricos, los cuales ofrecen una autonom\xEDa de 250 kil\xF3metros, adem\xE1s visto desde el cuidado del ambiente, estos veh\xEDculos generan menos emisiones de CO2."
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
-          "class": "list-group",
+          className: "list-group",
           style: {
             textAlign: "center"
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
-            "class": "list-group-item bg-transparent border-0 p-0 mb-2",
+            className: "list-group-item bg-transparent border-0 p-0 mb-2",
             style: {
               fontSize: "20" + "px"
             },
@@ -10124,7 +10124,7 @@ var Footer = function Footer() {
               alt: "gmail",
               target: "_blank",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-                "class": "fa fa-google-plus mr-1"
+                className: "fa fa-google-plus mr-1"
               }), "Cookies"]
             })]
           })
@@ -10132,8 +10132,7 @@ var Footer = function Footer() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
     })
   });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+}
 
 /***/ }),
 
