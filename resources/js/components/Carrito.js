@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Paypal from "./Paypal";
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ export default function Carrito() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (sessionStorage.getItem("usuarioId") === null) {
+        if (localStorage.getItem("usuarioId") === null) {
             navigate('/electricarNE2/public/Login');
         }
     }, [navigate]);
@@ -16,7 +16,7 @@ export default function Carrito() {
     return (
         <>
             {
-                sessionStorage.getItem("usuarioId") !== null && (
+                localStorage.getItem("usuarioId") !== null && (
                     <Row>
                         <Col>
                         </Col>

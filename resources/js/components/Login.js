@@ -38,10 +38,10 @@ function Login() {
             }
         ).then(response => {
             if (response.status === 200) {
-                sessionStorage.setItem("usuarioId",response.data[0].id);
+                localStorage.setItem("usuarioId",response.data[0].id);
                 //navigate('/electricarNE2/public/Home');
                 console.log('Correcto:'+ response.data[0].nombre);
-                console.log(sessionStorage.getItem("usuarioId"));
+                console.log(localStorage.getItem("usuarioId"));
             }
         }).catch(error => {
             console.log(error);

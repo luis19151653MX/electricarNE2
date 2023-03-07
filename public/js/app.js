@@ -9985,12 +9985,12 @@ __webpack_require__.r(__webpack_exports__);
 function Carrito() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (sessionStorage.getItem("usuarioId") === null) {
+    if (localStorage.getItem("usuarioId") === null) {
       navigate('/electricarNE2/public/Login');
     }
   }, [navigate]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: sessionStorage.getItem("usuarioId") !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    children: localStorage.getItem("usuarioId") !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Paypal__WEBPACK_IMPORTED_MODULE_1__["default"], {})
       })]
@@ -10502,10 +10502,10 @@ function Login() {
               }
             }).then(function (response) {
               if (response.status === 200) {
-                sessionStorage.setItem("usuarioId", response.data[0].id);
+                localStorage.setItem("usuarioId", response.data[0].id);
                 //navigate('/electricarNE2/public/Home');
                 console.log('Correcto:' + response.data[0].nombre);
-                console.log(sessionStorage.getItem("usuarioId"));
+                console.log(localStorage.getItem("usuarioId"));
               }
             })["catch"](function (error) {
               console.log(error);
@@ -10655,7 +10655,7 @@ function Main() {
     start = _useState2[0],
     setStart = _useState2[1];
   window.onload = function cargando() {
-    sessionStorage.setItem("usuarioId", null);
+    localStorage.setItem("usuarioId", null);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
     className: "App",
