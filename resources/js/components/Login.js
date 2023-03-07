@@ -35,7 +35,8 @@ function Login() {
             }
         ).then(response => {
             if (response.status === 200) {
-                console.log('Correcto');
+                //sessionStorage.setItem("usuarioId",response);
+                console.log('Correcto:'+ response);
             }
         }).catch(error => {
             console.log(error);
