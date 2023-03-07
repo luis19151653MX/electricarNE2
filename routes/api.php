@@ -27,3 +27,8 @@ Route::post('/get_producto', [ProductosController::class,'getProducto']);
 Route::post('/store_usuarios', [UsuariosController::class,'store']);
 Route::get('/c_usuarios', [UsuariosController::class,'c']);
 Route::post('/login', [UsuariosController::class, 'login']);
+
+
+Route::get('/index_usuarios', [UsuariosController::class,'index']);
+
+
