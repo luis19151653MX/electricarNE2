@@ -30,13 +30,3 @@ export default function Carrito() {
 
     );
 }
-
-/*<Row>
-                            <Col>
-                            </Col>
-                            <Col>
-                                <Paypal></Paypal>
-                            </Col>
-                        </Row>
-
-*/

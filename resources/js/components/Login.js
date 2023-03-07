@@ -41,6 +41,7 @@ function Login() {
                 sessionStorage.setItem("usuarioId",response.data[0].id);
                 //navigate('/electricarNE2/public/Home');
                 console.log('Correcto:'+ response.data[0].nombre);
+                console.log(sessionStorage.getItem("usuarioId"));
             }
         }).catch(error => {
             console.log(error);
