@@ -29,6 +29,6 @@ Route::get('/c_usuarios', [UsuariosController::class,'c']);
 Route::post('/login', [UsuariosController::class, 'login']);
 
 
-Route::get('/index_usuarios', [UsuariosController::class,'index']);
+Route::post('/index_usuarios', [UsuariosController::class,'index']);
 
 
