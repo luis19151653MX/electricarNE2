@@ -12,4 +12,12 @@ class personal_ventas extends Model
     protected $fillable = [
         'id','nombre', 'contraseña', 'telefono', 'direccion', 'email'
     ];
+
+    public function ventas(){
+        return $this->hasMany(ventas::class);
+    }
+    
+    public function descuentos(){
+        return $this->hasMany(descuentos::class);
+    }
 }
