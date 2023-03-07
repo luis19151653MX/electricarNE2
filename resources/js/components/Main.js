@@ -17,7 +17,7 @@ export default function Main() {
 
     const [start, setStart] = useState(false);
     window.onload = function cargando() {
-        localStorage.setItem("usuarioId",null);
+        sessionStorage.setItem("usuarioId",null);
     }
     return (
         <div className='App'>
