@@ -10732,8 +10732,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Container.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Navbar.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Navbar.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Container.js");
 /* harmony import */ var _css_navigation_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/navigation.css */ "./resources/css/navigation.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -10743,16 +10743,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Navigation() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    fluid: true,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "container-fluid",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: "navbar-blur",
       fixed: "top",
       collapseOnSelect: true,
       expand: "lg",
       variant: "light",
-      className: "navbar-blur",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Brand, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Brand, {
           style: {
             color: "#006655",
             fontSize: 18 + "pt"
@@ -10770,51 +10770,74 @@ function Navigation() {
               marginRight: '15px'
             }
           }), " ", ' ', "Electricar"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Brand, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Toggle, {
+          "aria-controls": "responsive-navbar-nav",
           style: {
-            color: "#006655",
-            fontSize: 18 + "pt"
-          },
-          as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
-          to: "/electricarNE2/public/Login",
-          title: "Logo",
-          children: "Login"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Brand, {
-          style: {
-            color: "#006655",
-            fontSize: 18 + "pt"
-          },
-          as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
-          to: "/electricarNE2/public/Carrito",
-          title: "Logo",
-          children: "Carrito"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Brand, {
-          style: {
-            color: "#006655",
-            fontSize: 18 + "pt"
-          },
-          as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
-          to: "/electricarNE2/public/HomeUC",
-          title: "Logo",
-          children: "UsuariosCompras"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Brand, {
-          style: {
-            color: "#006655",
-            fontSize: 18 + "pt"
-          },
-          as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
-          to: "/electricarNE2/public/Profile",
-          title: "Logo",
-          children: "Perfil"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Brand, {
-          style: {
-            color: "#006655",
-            fontSize: 18 + "pt"
-          },
-          as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
-          to: "/electricarNE2/public/HomeUV",
-          title: "Logo",
-          children: "UsuariosVentas"
+            borderColor: "#006655"
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Collapse, {
+          id: "basic-navbar-nav",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Brand, {
+            as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
+            to: "/electricarNE2/public/Login",
+            title: "Login",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              style: {
+                color: "#006655",
+                fontSize: 18 + "pt",
+                textAlign: "center"
+              },
+              children: "Login "
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Brand, {
+            as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
+            to: "/electricarNE2/public/Carrito",
+            title: "Carrito",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              style: {
+                color: "#006655",
+                fontSize: 18 + "pt",
+                textAlign: "center"
+              },
+              children: "Carrito "
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Brand, {
+            as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
+            to: "/electricarNE2/public/HomeUC",
+            title: "UsuariosCompras",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              style: {
+                color: "#006655",
+                fontSize: 18 + "pt",
+                textAlign: "center"
+              },
+              children: "UsuariosCompras "
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Brand, {
+            as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
+            to: "/electricarNE2/public/Profile",
+            title: "Perfil",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              style: {
+                color: "#006655",
+                fontSize: 18 + "pt",
+                textAlign: "center"
+              },
+              children: "Perfil "
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Brand, {
+            as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
+            to: "/electricarNE2/public/HomeUV",
+            title: "UsuarioVentas",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              style: {
+                color: "#006655",
+                fontSize: 18 + "pt",
+                textAlign: "center"
+              },
+              children: "UsuariosVentas "
+            })
+          })]
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
