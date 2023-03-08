@@ -1,1 +1,1 @@
-window.GlobalUsuarioId = null;
+window.GlobalUsuarioId = 1;
