@@ -22,17 +22,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//productos
 Route::get('/index_productos', [ProductosController::class,'index']);
 Route::post('/get_producto', [ProductosController::class,'getProducto']);
 Route::post('/show_usuarios', [UsuariosController::class,'getUsuario']);
 
+
+//usuarios
 Route::post('/store_usuarios', [UsuariosController::class,'store']);
 //Route::get('/c_usuarios', [UsuariosController::class,'c']);
 Route::post('/login', [UsuariosController::class, 'login']);
-
-
 Route::post('/index_carritos', [UsuariosController::class,'index']);
 
+//carritos de compras
 Route::post('/index_lista_carritos', [CarritosComprasController::class,'index']);
 Route::post('/store_carritos', [CarritosComprasController::class,'store']);
 Route::post('/cambioStatus', [CarritosComprasController::class,'cambioStatus']);
