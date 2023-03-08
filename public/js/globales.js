@@ -1,0 +1,1 @@
+window.GlobalUsuarioId = 1;
