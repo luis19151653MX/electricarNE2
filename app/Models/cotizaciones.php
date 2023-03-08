@@ -10,7 +10,7 @@ class cotizaciones extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id','comentarios', 'fecha_ultima_modificacion', 'venta_id', 'usuario_id'
+        'id','comentarios', 'fecha_ultima_modificacion', 'venta_id', 'usuario_id','statusVentas'
     ];
 
     public function lista_cotizaciones(){
