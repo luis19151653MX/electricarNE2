@@ -19,10 +19,10 @@ class UsuariosController extends Controller
      */
     public function index(Request $request)
     {
-
         $id = $request->usuario_id;
-        $usuarios = carritos_compras::where('usuario_id', $id)->first();
-        return $usuarios;
+        $carrito = carritos_compras::where('usuario_id', $id)->first();
+        $lista_carrito = lista_carritos::where('carrito_id', $request->carrito_id)->first();
+        return $lista_carrito;
     }
 
     /**
