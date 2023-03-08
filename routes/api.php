@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\CarritosComprasController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,5 +32,7 @@ Route::post('/login', [UsuariosController::class, 'login']);
 
 
 Route::post('/index_usuarios', [UsuariosController::class,'index']);
+
+Route::post('/index_CC', [CarritosComprasController::class,'index']);
 
 
