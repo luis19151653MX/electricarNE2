@@ -34,5 +34,7 @@ Route::post('/login', [UsuariosController::class, 'login']);
 Route::post('/index_carritos', [UsuariosController::class,'index']);
 
 Route::post('/index_lista_carritos', [CarritosComprasController::class,'index']);
+Route::post('/store_carritos', [CarritosComprasController::class,'store']);
+Route::post('/cambioStatus', [CarritosComprasController::class,'cambioStatus']);
 
 
