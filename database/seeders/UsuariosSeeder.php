@@ -48,5 +48,16 @@ class UsuariosSeeder extends Seeder
         $u3->tipo = 'prospecto';
         $u3->save();
 
+        $u3 = new usuarios();
+        $u3->id = 4;
+        $u3->nombre = "Ricardo Enrique";
+        $u3->contraseña = "123456789";
+        $u3->telefono = 4492046426;
+        $u3->direccion = "La luna #108";
+        $u3->email = "pas2@gmail.com";
+        $u3->fecha_cumpleaños = "1995-09-05";
+        $u3->tipo = 'prospecto';
+        $u3->save();
+
     }
 }

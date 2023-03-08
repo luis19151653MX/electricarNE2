@@ -28,3 +28,8 @@ Route::post('/show_usuarios', [UsuariosController::class,'getUsuario']);
 Route::post('/store_usuarios', [UsuariosController::class,'store']);
 //Route::get('/c_usuarios', [UsuariosController::class,'c']);
 Route::post('/login', [UsuariosController::class, 'login']);
+
+
+Route::post('/index_usuarios', [UsuariosController::class,'index']);
+
+

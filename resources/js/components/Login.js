@@ -1,10 +1,13 @@
 import '../../css/login.css';
 import React from "react";
 import { Form, Button, Container, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 function Login() {
+
+    const navigate = useNavigate();
     const [login, setLogin] = React.useState({
         email: '',
         contraseña: '',
@@ -35,7 +38,10 @@ function Login() {
             }
         ).then(response => {
             if (response.status === 200) {
-                console.log('Correcto');
+                localStorage.setItem("usuarioId",response.data[0].id);
+                //navigate('/electricarNE2/public/Home');
+                console.log('Correcto:'+ response.data[0].nombre);
+                console.log(localStorage.getItem("usuarioId"));
             }
         }).catch(error => {
             console.log(error);

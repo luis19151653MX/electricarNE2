@@ -2,14 +2,14 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import '../../css/footer.css';
 
-const Footer = () => {
+export default function Footer(){
     return (
         <Container fluid>
             <footer>
-                <div class="container pt-5 border-bottom">
-                    <div class="row text-center">
+                <div className="container pt-5 border-bottom">
+                    <div className="row text-center">
                         <div style={{ textAlign: "center" }}>
-                            <marquee direction="left" SCROLLDELAY="30">
+                            <marquee direction="right" SCROLLDELAY="30">
                                 <img
                                     src='../resources/imagenes/coche-icon-gif.gif'
                                     title="Logo"
@@ -18,9 +18,9 @@ const Footer = () => {
                                     height="118" />
                             </marquee>
                         </div>
-                        <h4 class="mb-4 font-weight-bold text-uppercase">Contactos</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <h4 className="mb-4 font-weight-bold text-uppercase">Contactos</h4>
+                        <ul className="list-group">
+                            <li className="list-group-item bg-transparent border-0 p-0 mb-2">
                                 <a
                                     href="https://www.google.com/intl/es-419/gmail/about/"
                                     title="gmail"
@@ -60,8 +60,8 @@ const Footer = () => {
                         ofrecen una autonomía de 250 kilómetros, además visto desde el cuidado del ambiente, estos vehículos generan menos emisiones de CO2.
                     </p>
                 <div>
-                    <ul class="list-group" style={{ textAlign: "center" }}>
-                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"
+                    <ul className="list-group" style={{ textAlign: "center" }}>
+                        <li className="list-group-item bg-transparent border-0 p-0 mb-2"
                             style={{ fontSize: "20" + "px" }}>
                             <img
                                 src='../resources/imagenes/Cookie.png'
@@ -75,7 +75,7 @@ const Footer = () => {
                                 title="gmail"
                                 alt="gmail"
                                 target="_blank"><i
-                                    class="fa fa-google-plus mr-1"></i>Cookies</a>
+                                    className="fa fa-google-plus mr-1"></i>Cookies</a>
 
                         </li>
                     </ul>
@@ -87,5 +87,3 @@ const Footer = () => {
     );
 
 }
-
-export default Footer;
