@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\CarritosComprasController;
+use App\Http\Controllers\ListaCarritosController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,5 @@ Route::post('/store_carritos', [CarritosComprasController::class,'store']);
 Route::post('/cambioStatus', [CarritosComprasController::class,'cambioStatus']);
 
 
+//lista de carritos
+Route::post('/store_lista_carritos', [ListaCarritosController::class,'store']);

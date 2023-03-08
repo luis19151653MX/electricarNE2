@@ -60,7 +60,7 @@ class CarritosComprasController extends Controller
 
 
     public function cambioStatus(Request $request){
-        $carritos_compras = carritos_compras::where('usuario_id', $request->usuario_id)->where('status', 'true')->first();
+        $carritos_compras = carritos_compras::where('id', $request->id)->where('status', 'true')->first();
         $carritos_compras->status = 'false';
         $carritos_compras->save();
         return $carritos_compras;

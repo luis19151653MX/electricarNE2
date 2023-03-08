@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\lista_carritos;
+use App\Models\carritos_compras;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ListaCarritosController extends Controller
 {
@@ -35,9 +37,34 @@ class ListaCarritosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'usuario_id' => 'required',
+            'carrito_id' => 'required',
+            'cantidad' => 'required|min:1',
+            'producto_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        $lista_carritos = lista_carritos::create([
+            'usuario_id' => $request->usuario_id,
+            'carrito_id' => $request->carrito_id,
+            'cantidad' => $request->cantidad,
+            'producto_id'=>$request->producto_id,
+            'status' => 'true'
+        ]);
+        $lista_carritos->save();
     }
 
+    public function cambioStatus(Request $request){
+        $carritos_compras = carritos_compras::where('usuario_id', $request->usuario_id)->where('status', 'true')->first();
+        $carritos_compras->status = 'false';
+        $carritos_compras->save();
+        return $carritos_compras;
+    }
+    
     /**
      * Display the specified resource.
      *
