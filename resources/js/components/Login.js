@@ -38,10 +38,9 @@ function Login() {
             }
         ).then(response => {
             if (response.status === 200) {
-                localStorage.setItem("usuarioId",response.data[0].id);
-                //navigate('/electricarNE2/public/Home');
+                window.GlobalUsuarioId=response.data[0].id;
                 console.log('Correcto:'+ response.data[0].nombre);
-                console.log(localStorage.getItem("usuarioId"));
+                navigate('/electricarNE2/public/Home')
             }
         }).catch(error => {
             console.log(error);

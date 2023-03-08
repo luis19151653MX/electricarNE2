@@ -9985,12 +9985,12 @@ __webpack_require__.r(__webpack_exports__);
 function Carrito() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (localStorage.getItem("usuarioId") === null) {
+    if (GlobalUsuarioId === null) {
       navigate('/electricarNE2/public/Login');
     }
   }, [navigate]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: localStorage.getItem("usuarioId") !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    children: GlobalUsuarioId !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Paypal__WEBPACK_IMPORTED_MODULE_1__["default"], {})
       })]
@@ -10502,10 +10502,9 @@ function Login() {
               }
             }).then(function (response) {
               if (response.status === 200) {
-                localStorage.setItem("usuarioId", response.data[0].id);
-                //navigate('/electricarNE2/public/Home');
+                window.GlobalUsuarioId = response.data[0].id;
                 console.log('Correcto:' + response.data[0].nombre);
-                console.log(localStorage.getItem("usuarioId"));
+                navigate('/electricarNE2/public/Home');
               }
             })["catch"](function (error) {
               console.log(error);
@@ -11067,6 +11066,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Container.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _css_colores_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/colores.css */ "./resources/css/colores.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -11087,9 +11087,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function UserProfile() {
-  var _location$state$autoI, _location$state;
-  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((_location$state$autoI = location === null || location === void 0 ? void 0 : (_location$state = location.state) === null || _location$state === void 0 ? void 0 : _location$state.autoID) !== null && _location$state$autoI !== void 0 ? _location$state$autoI : 2),
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(window.GlobalUsuarioId),
     _useState2 = _slicedToArray(_useState, 2),
     userId = _useState2[0],
     setUsuarioId = _useState2[1];
@@ -11128,6 +11127,10 @@ function UserProfile() {
       return _ref.apply(this, arguments);
     };
   }();
+  function cerrarSesion() {
+    window.GlobalUsuarioId = null;
+    navigate('/electricarNE2/public/Home');
+  }
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     loadUser();
   }, []);
@@ -11179,10 +11182,10 @@ function UserProfile() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
                 children: "Tipo de cliente: "
               }), " ", usuario.tipo]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-              href: "#",
-              "class": "btn btn-success",
-              children: "Editar"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              variant: "success",
+              onClick: cerrarSesion,
+              children: "Cerrar Sesi\xF3n"
             })]
           })]
         })
