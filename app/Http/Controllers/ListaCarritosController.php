@@ -59,12 +59,12 @@ class ListaCarritosController extends Controller
     }
 
     public function cambioStatus(Request $request){
-        $carritos_compras = carritos_compras::where('usuario_id', $request->usuario_id)->where('status', 'true')->first();
-        $carritos_compras->status = 'false';
-        $carritos_compras->save();
-        return $carritos_compras;
+        $lista_carritos = lista_carritos::where('id', $request->id)->where('status', 'true')->first();
+        $lista_carritos->status = 'false';
+        $lista_carritos->save();
+        return $lista_carritos;
     }
-    
+
     /**
      * Display the specified resource.
      *

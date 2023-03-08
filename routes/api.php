@@ -43,3 +43,4 @@ Route::post('/cambioStatus', [CarritosComprasController::class,'cambioStatus']);
 
 //lista de carritos
 Route::post('/store_lista_carritos', [ListaCarritosController::class,'store']);
+Route::post('/cambiostatus_lista_carritos', [ListaCarritosController::class,'cambioStatus']);
