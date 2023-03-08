@@ -23,7 +23,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/index_productos', [ProductosController::class,'index']);
 Route::post('/get_producto', [ProductosController::class,'getProducto']);
+Route::post('/show_usuarios', [UsuariosController::class,'getUsuario']);
 
 Route::post('/store_usuarios', [UsuariosController::class,'store']);
-Route::get('/c_usuarios', [UsuariosController::class,'c']);
+//Route::get('/c_usuarios', [UsuariosController::class,'c']);
 Route::post('/login', [UsuariosController::class, 'login']);

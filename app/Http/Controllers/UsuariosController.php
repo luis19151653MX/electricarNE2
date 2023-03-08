@@ -18,7 +18,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -92,6 +92,12 @@ class UsuariosController extends Controller
         } else {
             return response()->json(['Las credenciales no son válidas.'], 401);
         }
+    }
+
+    public function getUsuario(Request $request)
+    {
+        $user = usuarios::where('id', $request->id)->first();
+        return $user;
     }
 
     /**
