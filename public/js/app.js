@@ -9985,12 +9985,12 @@ __webpack_require__.r(__webpack_exports__);
 function Carrito() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (localStorage.getItem("usuarioId") === null) {
+    if (GlobalUsuarioId === null) {
       navigate('/electricarNE2/public/Login');
     }
   }, [navigate]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: localStorage.getItem("usuarioId") !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    children: GlobalUsuarioId !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Paypal__WEBPACK_IMPORTED_MODULE_1__["default"], {})
       })]
@@ -10502,10 +10502,9 @@ function Login() {
               }
             }).then(function (response) {
               if (response.status === 200) {
-                localStorage.setItem("usuarioId", response.data[0].id);
-                //navigate('/electricarNE2/public/Home');
+                window.GlobalUsuarioId = response.data[0].id;
                 console.log('Correcto:' + response.data[0].nombre);
-                console.log(localStorage.getItem("usuarioId"));
+                navigate('/electricarNE2/public/Home');
               }
             })["catch"](function (error) {
               console.log(error);

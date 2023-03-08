@@ -8,7 +8,7 @@ export default function Carrito() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (localStorage.getItem("usuarioId") === null) {
+        if (GlobalUsuarioId === null) {
             navigate('/electricarNE2/public/Login');
         }
     }, [navigate]);
@@ -16,7 +16,7 @@ export default function Carrito() {
     return (
         <>
             {
-                localStorage.getItem("usuarioId") !== null && (
+                GlobalUsuarioId !== null && (
                     <Row>
                         <Col>
                         </Col>
