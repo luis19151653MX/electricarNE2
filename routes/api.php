@@ -31,8 +31,8 @@ Route::post('/store_usuarios', [UsuariosController::class,'store']);
 Route::post('/login', [UsuariosController::class, 'login']);
 
 
-Route::post('/index_usuarios', [UsuariosController::class,'index']);
+Route::post('/index_carritos', [UsuariosController::class,'index']);
 
-Route::post('/index_CC', [CarritosComprasController::class,'index']);
+Route::post('/index_lista_carritos', [CarritosComprasController::class,'index']);
 
 
