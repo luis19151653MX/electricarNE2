@@ -10,8 +10,8 @@ export default function ListaCarrito() {
     useEffect(() => {
         if (GlobalUsuarioId === null) {
             navigate('/electricarNE2/public/Login');
-        }
-    }, [navigate]);
+        }else loadLista();
+    }, [navigate,window.GlobalCarritoActual]);
 
 
     const [lista, setLista] = useState([]);
@@ -26,22 +26,16 @@ export default function ListaCarrito() {
         data.append("carrito_id", window.GlobalCarritoActual);
         await axios.post("http://127.0.0.1/electricarNE2/public/api/index_lista_carritos", data, config)
             .then(response => {
+                console.log("lista del carrito id:" + window.GlobalCarritoActual);
                 setLista(response.data);
-                console.log(lista);
             }).catch(error => {
                 console.log(error);
             });
     }
 
+
     useEffect(() => {
-        function handleMouseMove(e) {
-            // Aquí puedes hacer lo que necesites cuando se detecte movimiento del mouse
-            loadLista();
-        }
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
+        loadLista();
     }, []);
 
     return (

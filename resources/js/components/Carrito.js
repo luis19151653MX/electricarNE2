@@ -13,7 +13,7 @@ export default function Carrito() {
     useEffect(() => {
         if (GlobalUsuarioId === null) {
             navigate('/electricarNE2/public/Login');
-        }
+        }else loadCarritos();
     }, [navigate]);
 
     const [carritos, setCarritos] = useState([]);
@@ -29,9 +29,10 @@ export default function Carrito() {
         await axios.post("http://127.0.0.1/electricarNE2/public/api/index_carritos", data, config)
             .then(response => {
                 setCarritos(response.data);
-                console.log(response.data);
+                //console.log(response.data);
                 //console.log(response.data[0].id);
-                if(window.GlobalCarritoActual===null) window.GlobalCarritoActual=response.data[0].id;
+                if (window.GlobalCarritoActual === null) window.GlobalCarritoActual = response.data[0].id;
+                console.log("Carrito.js globalcarrito" + window.GlobalCarritoActual);
             }).catch(error => {
                 console.log(error);
             });
@@ -40,9 +41,6 @@ export default function Carrito() {
     useEffect(() => {
         loadCarritos()
     }, [])
-
-
-    
 
     return (
         GlobalUsuarioId !== null && (
@@ -64,7 +62,14 @@ export default function Carrito() {
                             )
                         }
                     </Col>
-                    <ListaCarrito></ListaCarrito>
+                    {
+                        window.GlobalCarritoActual !== null ?
+                            (<ListaCarrito carritoAct={window.GlobalCarritoActual}></ListaCarrito>)
+                            :
+                            (<Col md={3} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
+                                <h1>selecciona un carrito</h1>
+                            </Col>)
+                    }
                     <Col>
                         <Paypal></Paypal>
                     </Col>

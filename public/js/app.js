@@ -10003,7 +10003,7 @@ function Carrito() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (GlobalUsuarioId === null) {
       navigate('/electricarNE2/public/Login');
-    }
+    } else loadCarritos();
   }, [navigate]);
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
@@ -10026,9 +10026,10 @@ function Carrito() {
             _context.next = 5;
             return axios.post("http://127.0.0.1/electricarNE2/public/api/index_carritos", data, config).then(function (response) {
               setCarritos(response.data);
-              console.log(response.data);
+              //console.log(response.data);
               //console.log(response.data[0].id);
               if (window.GlobalCarritoActual === null) window.GlobalCarritoActual = response.data[0].id;
+              console.log("Carrito.js globalcarrito" + window.GlobalCarritoActual);
             })["catch"](function (error) {
               console.log(error);
             });
@@ -10065,7 +10066,19 @@ function Carrito() {
             })
           }, carrito.id);
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ListaCarritoActual__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }), window.GlobalCarritoActual !== null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ListaCarritoActual__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        carritoAct: window.GlobalCarritoActual
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        md: 3,
+        lg: {
+          minWidth: '250px',
+          maxWidth: '300px',
+          width: "270px"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+          children: "selecciona un carrito"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Paypal__WEBPACK_IMPORTED_MODULE_1__["default"], {})
       })]
     })]
@@ -10598,7 +10611,7 @@ function CarritoProducto(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["default"], {
     md: 2,
     style: {
-      backgroundColor: "#111111"
+      backgroundColor: "#aaaaaa"
     },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
       children: props.lista.producto_id
@@ -10645,8 +10658,8 @@ function ListaCarrito() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (GlobalUsuarioId === null) {
       navigate('/electricarNE2/public/Login');
-    }
-  }, [navigate]);
+    } else loadLista();
+  }, [navigate, window.GlobalCarritoActual]);
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
     lista = _useState2[0],
@@ -10667,8 +10680,8 @@ function ListaCarrito() {
             data.append("carrito_id", window.GlobalCarritoActual);
             _context.next = 5;
             return axios.post("http://127.0.0.1/electricarNE2/public/api/index_lista_carritos", data, config).then(function (response) {
+              console.log("lista del carrito id:" + window.GlobalCarritoActual);
               setLista(response.data);
-              console.log(lista);
             })["catch"](function (error) {
               console.log(error);
             });
@@ -10683,14 +10696,7 @@ function ListaCarrito() {
     };
   }();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    function handleMouseMove(e) {
-      // Aquí puedes hacer lo que necesites cuando se detecte movimiento del mouse
-      loadLista();
-    }
-    window.addEventListener('mousemove', handleMouseMove);
-    return function () {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
+    loadLista();
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
     md: 3,
