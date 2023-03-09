@@ -4,7 +4,7 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\CarritosComprasController;
 use App\Http\Controllers\ListaCarritosController;
-
+use Database\Seeders\Carritos_comprasSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,8 +40,11 @@ Route::post('/index_lista_carritos', [CarritosComprasController::class,'index'])
 Route::post('/store_carritos', [CarritosComprasController::class,'store']);
 Route::post('/cambioStatus', [CarritosComprasController::class,'cambioStatus']);
 Route::post('/cambioStatusVenta', [CarritosComprasController::class,'cambioStatusVenta']);
+        //total a pagar
+Route::post('/totalPagar_carrito', [CarritosComprasController::class,'totalPagar']);
 
 
-//lista de carritos
+//lista de carritos+
 Route::post('/store_lista_carritos', [ListaCarritosController::class,'store']);
 Route::post('/cambiostatus_lista_carritos', [ListaCarritosController::class,'cambioStatus']);
+

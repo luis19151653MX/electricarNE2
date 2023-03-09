@@ -6,6 +6,7 @@ use App\Models\carritos_compras;
 use App\Models\lista_carritos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class CarritosComprasController extends Controller
@@ -16,7 +17,7 @@ class CarritosComprasController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     
+
     public function index(Request $request)
     {
         $lista = lista_carritos::where('carrito_id', $request->carrito_id)->where('status', 'true')->get();
@@ -59,19 +60,32 @@ class CarritosComprasController extends Controller
     }
 
 
-    public function cambioStatus(Request $request){
+    public function cambioStatus(Request $request)
+    {
         $carritos_compras = carritos_compras::where('id', $request->id)->where('status', 'true')->first();
         $carritos_compras->status = 'false';
         $carritos_compras->save();
         return $carritos_compras;
     }
 
-    public function cambioStatusVenta(Request $request){
+    public function cambioStatusVenta(Request $request)
+    {
         $carritos_compras = carritos_compras::where('id', $request->id)->where('status', 'true')->where('statusVenta', 'cotización')->first();
         $carritos_compras->status = 'false';
         $carritos_compras->statusVenta = 'venta';
         $carritos_compras->save();
         return $carritos_compras;
+    }
+
+    public function totalPagar(Request $request)
+    {
+        $total = DB::table('lista_carritos')
+        ->join('productos', 'lista_carritos.producto_id', '=', 'productos.id')
+        ->where('carrito_id', $request->id)
+        ->where('status', 'true')
+        ->sum('precio');
+
+        return $total;
     }
     /**
      * Display the specified resource.
