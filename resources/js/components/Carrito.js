@@ -6,14 +6,14 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Carrito() {
     const navigate = useNavigate();
-    
+
     useEffect(() => {
         if (GlobalUsuarioId === null) {
             navigate('/electricarNE2/public/Login');
         }
     }, [navigate]);
-    
-    const [carrito,setCarritos]=useState([]);
+
+    const [carritos, setCarritos] = useState([]);
 
     const loadCarritos = async () => {
         const config = {
@@ -23,18 +23,22 @@ export default function Carrito() {
             }
         };
         const data = new FormData();
-        data.append("id", windows.GlobalUsuarioId);
+        data.append("usuario_id", window.GlobalUsuarioId);
         await axios.post("http://127.0.0.1/electricarNE2/public/api/index_carritos", data, config)
             .then(response => {
+                setCarritos(response.data.data);
                 console.log(response.data);
-                setCarritos(response.data);
             }).catch(error => {
                 console.log(error);
             });
     }
 
+    useEffect(() => {
+        loadCarritos()
+    }, [])
 
-    
+
+
 
     return (
         <Container fluid>
@@ -44,6 +48,14 @@ export default function Carrito() {
                 GlobalUsuarioId !== null && (
                     <Row>
                         <Col>
+                            {
+                                carritos.map(carrito => {
+                                    return
+                                    (
+                                        <h1>{carrito.id}</h1>
+                                    );
+                                })
+                            }
                         </Col>
                         <Col>
                             <Paypal></Paypal>
