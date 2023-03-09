@@ -20,7 +20,7 @@ class CreateListaCarritosTable extends Migration
             $table->integer("cantidad");
             $table->unsignedBigInteger('producto_id');
             $table->foreign('producto_id')->references('id')->on('productos');
-            $table->char("status");
+            $table->string("status");
             $table->timestamps();
         });
     }

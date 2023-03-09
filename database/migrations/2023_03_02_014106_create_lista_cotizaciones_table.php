@@ -15,14 +15,15 @@ class CreateListaCotizacionesTable extends Migration
     {
         Schema::create('lista_cotizaciones', function (Blueprint $table) {
             $table->id();
-            $table->char("status");
-            $table->integer("cantidad");
+            $table->string("status"); //
+            $table->integer("cantidad"); //
+            //cambiar también esos 2 campos en modelo y seeder
             $table->unsignedBigInteger('cotizacion_id');
             $table->foreign('cotizacion_id')->references('id')->on('cotizaciones');
             $table->unsignedBigInteger('descuento_id');
             $table->foreign('descuento_id')->references('id')->on('descuentos');
-            $table->unsignedBigInteger('productos_id');
-            $table->foreign('productos_id')->references('id')->on('productos');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
             $table->timestamps();
         });
     }

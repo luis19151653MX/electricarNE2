@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Button, Row, Col, Toast, ToastContainer, Table, Modal, Form } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import colores from "../../css/colores.css";
 
 export default function UserProfile() {
-    const location = useLocation();
-    const [userId, setUsuarioId] = useState(location?.state?.autoID ?? 2);
+    const navigate = useNavigate();
+    const [userId, setUsuarioId] = useState(window.GlobalUsuarioId);
     const [usuario, setUsuario] = useState({});
 
     const loadUser = async () => {
@@ -25,6 +25,10 @@ export default function UserProfile() {
                 console.log(error);
             });
     }
+     function cerrarSesion(){
+        window.GlobalUsuarioId=null;
+        navigate('/electricarNE2/public/Home');
+     }
 
     useEffect(() => {
         loadUser()
@@ -49,7 +53,7 @@ export default function UserProfile() {
                             <p class="card-text"><b>E-mail: </b> {usuario.email}</p>
                             <p class="card-text"><b>Fecha de nacimiento: </b> {usuario.fecha_cumpleaños}</p>
                             <p class="card-text"><b>Tipo de cliente: </b> {usuario.tipo}</p>
-                            <a href="#" class="btn btn-success">Editar</a>
+                            <Button variant="success" onClick={cerrarSesion} >Cerrar Sesión</Button>
                         </div>
                     </div>
                 </Col>

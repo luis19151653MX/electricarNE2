@@ -25,6 +25,8 @@
                 font-family: 'Nunito';
             }
         </style>
+
+<script src="{{ asset('js/globales.js') }}"></script>
     </head>
     <body class="antialiased">
         <div id="main"> 

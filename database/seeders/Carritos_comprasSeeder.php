@@ -18,6 +18,7 @@ class Carritos_comprasSeeder extends Seeder
         $Cc1 = new carritos_compras();
         $Cc1->id = 1;
         $Cc1->usuario_id = "1";
+        $Cc1->statusVenta = "cotizacion";
         $Cc1->status = "true";
         $Cc1->fecha_ultima_modificacion = "2021-02-12";
      
@@ -27,6 +28,7 @@ class Carritos_comprasSeeder extends Seeder
         $Cc2->id =2;
         $Cc2->usuario_id = "3";
         $Cc2->status = "false";
+        $Cc2->statusVenta = "cotizacion";
         $Cc2->fecha_ultima_modificacion = "2021-02-12";
        
       
@@ -35,6 +37,7 @@ class Carritos_comprasSeeder extends Seeder
         $Cc3 = new carritos_compras();
         $Cc3->id = 3;
         $Cc3->usuario_id = "2";
+        $Cc3->statusVenta = "venta";
         $Cc3->status = "true";
         $Cc3->fecha_ultima_modificacion = "2021-02-12";
      

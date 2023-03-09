@@ -16,6 +16,7 @@ class CreateCotizacionesTable extends Migration
         Schema::create('cotizaciones', function (Blueprint $table) {
             $table->id();
             $table->text("comentarios");
+            $table->string("statusVentas");
             $table->date("fecha_ultima_modificacion");
             $table->unsignedBigInteger('venta_id');
             $table->foreign('venta_id')->references('id')->on('ventas');

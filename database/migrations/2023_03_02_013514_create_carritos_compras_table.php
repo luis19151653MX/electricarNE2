@@ -17,7 +17,8 @@ class CreateCarritosComprasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('usuarios');
-            $table->char("status");
+            $table->string("statusVenta"); //venta o cotizacione
+            $table->string("status"); //true o false
             $table->date("fecha_ultima_modificacion");
             $table->timestamps();
         });
