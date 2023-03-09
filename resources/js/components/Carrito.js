@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import "../../css/carrito.css";
 import CarritoFila from "./CarritoFila";
@@ -41,6 +41,24 @@ export default function Carrito() {
         loadCarritos()
     }, [])
 
+    const storeCarrito=async ()=>{
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+            }
+        };
+        const data = new FormData();
+        data.append("usuario_id", window.GlobalUsuarioId);
+        await axios.post("http://127.0.0.1/electricarNE2/public/api/store_carritos", data, config)
+            .then(response => {
+                console.log("carrito añadido correctamente");
+                window.location.reload();
+            }).catch(error => {
+                console.log(error);
+            });
+    }
+
     return (
         GlobalUsuarioId !== null && (
             <Container fluid>
@@ -50,6 +68,9 @@ export default function Carrito() {
                 <Row >
                     <Col md={3} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
                         <h1 className='titulo'> Tus carritos ... </h1>
+                        <br></br>
+                        <Button variant="success" onClick={storeCarrito}> Nuevo carrito </Button>
+                        <br></br>
                         {
 
                             carritos.map((carrito) =>
@@ -60,6 +81,8 @@ export default function Carrito() {
                             )
                             )
                         }
+                        
+                        
                     </Col>
                     {
                         window.GlobalCarritoActual !== null ?

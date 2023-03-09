@@ -9973,6 +9973,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Container.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _css_carrito_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/carrito.css */ "./resources/css/carrito.css");
 /* harmony import */ var _CarritoFila__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CarritoFila */ "./resources/js/components/CarritoFila.jsx");
@@ -10044,6 +10045,37 @@ function Carrito() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     loadCarritos();
   }, []);
+  var storeCarrito = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var config, data;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            config = {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+              }
+            };
+            data = new FormData();
+            data.append("usuario_id", window.GlobalUsuarioId);
+            _context2.next = 5;
+            return axios.post("http://127.0.0.1/electricarNE2/public/api/store_carritos", data, config).then(function (response) {
+              console.log("carrito añadido correctamente");
+              window.location.reload();
+            })["catch"](function (error) {
+              console.log(error);
+            });
+          case 5:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return function storeCarrito() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
   return GlobalUsuarioId !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
     fluid: true,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -10057,7 +10089,11 @@ function Carrito() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
           className: "titulo",
           children: " Tus carritos ... "
-        }), carritos.map(function (carrito) {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          variant: "success",
+          onClick: storeCarrito,
+          children: " Nuevo carrito "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), carritos.map(function (carrito) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_CarritoFila__WEBPACK_IMPORTED_MODULE_2__["default"], {
               carrito: carrito
