@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Table, Button, InputGroup, CloseButton } from 'react-bootstrap';
+import { Col, Table, Button, InputGroup, CloseButton } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export default function CarritoProducto(props) {
+    
+    const navigate = useNavigate();
 
     const [producto, setProducto] = useState({});
 
@@ -28,7 +31,7 @@ export default function CarritoProducto(props) {
 
 
     return (
-        <Col md={6} className="justify-content-md-center">
+        <Col md={6} >
             
                         <Table style={{ textAlign: "center" }}>
                             <tbody>
@@ -49,8 +52,7 @@ export default function CarritoProducto(props) {
 
                                     <td>
                                         <Button variant="primary" onClick={() => {
-                                            //console.log(auto.id);
-                                            //navigate('/react-example/ProductCard', { state: { autoID: producto.id } });
+                                            navigate('/electricarNE2/public/ProductCard',{state:{autoID:producto.id}});
                                         }}> Ver producto</Button>
                                     </td>
 

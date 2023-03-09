@@ -53,7 +53,7 @@ export default function ListaCarrito() {
 
     return (
         <Col md={9} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
-            <h1 className='titulo'> Productos del carrito ... </h1>
+            <h1 className='titulo'> Productos del carrito {window.GlobalCarritoActual} </h1>
             {
 
                 lista.map((lista) =>
