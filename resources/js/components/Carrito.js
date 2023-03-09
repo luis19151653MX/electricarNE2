@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import Paypal from "./Paypal";
 import { useNavigate } from 'react-router-dom';
 import "../../css/carrito.css";
 import CarritoFila from "./CarritoFila";
@@ -70,9 +69,6 @@ export default function Carrito() {
                                 <h1>selecciona un carrito</h1>
                             </Col>)
                     }
-                    <Col>
-                        <Paypal></Paypal>
-                    </Col>
                 </Row>
             </Container>
         )

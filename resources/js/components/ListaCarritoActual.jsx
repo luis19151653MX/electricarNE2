@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import ItemListaCarrito from "./ItemListaCarrito";
+import Paypal from "./Paypal";
 
 export default function ListaCarrito() {
 
@@ -48,10 +49,10 @@ export default function ListaCarrito() {
             window.removeEventListener('click', handleClick);
         };
     }, []);
-    
+
 
     return (
-        <Col md={3} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
+        <Col md={9} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
             <h1 className='titulo'> Productos del carrito ... </h1>
             {
 
@@ -62,7 +63,9 @@ export default function ListaCarrito() {
                     </div>
                 )
                 )
+
             }
+            <Paypal></Paypal>
         </Col>
     );
 }
