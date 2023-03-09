@@ -10,7 +10,7 @@ class carritos_compras extends Model
     use HasFactory;
     
     protected $fillable = [
-        'id','usuario_id', 'status', 'fecha_ultima_modificacion'
+        'id','usuario_id','fecha_ultima_modificacion','status','statusVenta'
     ];
 
     public function lista_carritos(){
