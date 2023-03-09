@@ -10,8 +10,8 @@ export default function ListaCarrito() {
     useEffect(() => {
         if (GlobalUsuarioId === null) {
             navigate('/electricarNE2/public/Login');
-        }else loadLista();
-    }, [navigate,window.GlobalCarritoActual]);
+        } else loadLista();
+    }, [navigate]);
 
 
     const [lista, setLista] = useState([]);
@@ -37,6 +37,18 @@ export default function ListaCarrito() {
     useEffect(() => {
         loadLista();
     }, []);
+
+    useEffect(() => {
+        function handleClick(e) {
+            // Aquí puedes hacer lo que necesites cuando se detecte un clic en lugar de movimiento del mouse
+            loadLista();
+        }
+        window.addEventListener('click', handleClick);
+        return () => {
+            window.removeEventListener('click', handleClick);
+        };
+    }, []);
+    
 
     return (
         <Col md={3} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>

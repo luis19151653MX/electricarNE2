@@ -17,15 +17,16 @@ export default function carritoFila(props) {
     }
 
     useEffect(() => {
-        function handleMouseMove(e) {
-            // Aquí puedes hacer lo que necesites cuando se detecte movimiento del mouse
+        function handleClick(e) {
+            // Aquí puedes hacer lo que necesites cuando se detecte un clic en lugar de movimiento del mouse
             estaSeleccionado();
         }
-        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('click', handleClick);
         return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('click', handleClick);
         };
     }, []);
+    
 
     return (
         <Row className='carritoFila' style={{ backgroundColor: backgroundColor }} onClick={handleClick} >

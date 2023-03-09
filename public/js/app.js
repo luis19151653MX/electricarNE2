@@ -10128,13 +10128,13 @@ function carritoFila(props) {
     window.GlobalCarritoActual == props.carrito.id ? setBackgroundColor('#00b62d') : setBackgroundColor('#0d8f79');
   }
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    function handleMouseMove(e) {
-      // Aquí puedes hacer lo que necesites cuando se detecte movimiento del mouse
+    function handleClick(e) {
+      // Aquí puedes hacer lo que necesites cuando se detecte un clic en lugar de movimiento del mouse
       estaSeleccionado();
     }
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('click', handleClick);
     return function () {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('click', handleClick);
     };
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -10659,7 +10659,7 @@ function ListaCarrito() {
     if (GlobalUsuarioId === null) {
       navigate('/electricarNE2/public/Login');
     } else loadLista();
-  }, [navigate, window.GlobalCarritoActual]);
+  }, [navigate]);
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
     lista = _useState2[0],
@@ -10697,6 +10697,16 @@ function ListaCarrito() {
   }();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     loadLista();
+  }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    function handleClick(e) {
+      // Aquí puedes hacer lo que necesites cuando se detecte un clic en lugar de movimiento del mouse
+      loadLista();
+    }
+    window.addEventListener('click', handleClick);
+    return function () {
+      window.removeEventListener('click', handleClick);
+    };
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
     md: 3,
