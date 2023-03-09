@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import Paypal from "./Paypal";
 import { useNavigate } from 'react-router-dom';
+import "../../css/carrito.css";
+import CarritoFila from "./CarritoFila";
 
 
 export default function Carrito() {
@@ -14,6 +16,7 @@ export default function Carrito() {
     }, [navigate]);
 
     const [carritos, setCarritos] = useState([]);
+    const [selectedId, setSelectedId] = useState(null);
 
     const loadCarritos = async () => {
         const config = {
@@ -26,8 +29,9 @@ export default function Carrito() {
         data.append("usuario_id", window.GlobalUsuarioId);
         await axios.post("http://127.0.0.1/electricarNE2/public/api/index_carritos", data, config)
             .then(response => {
-                setCarritos(response.data.data);
+                setCarritos(response.data);
                 console.log(response.data);
+                console.log(carritos);
             }).catch(error => {
                 console.log(error);
             });
@@ -37,33 +41,33 @@ export default function Carrito() {
         loadCarritos()
     }, [])
 
-
-
+    
 
     return (
-        <Container fluid>
-            <br></br>
-            <br></br>
-            {
-                GlobalUsuarioId !== null && (
-                    <Row>
-                        <Col>
-                            {
-                                carritos.map(carrito => {
-                                    return
-                                    (
-                                        <h1>{carrito.id}</h1>
-                                    );
-                                })
-                            }
-                        </Col>
-                        <Col>
-                            <Paypal></Paypal>
-                        </Col>
-                    </Row>
-                )
-            }
-        </Container>
+        GlobalUsuarioId !== null && (
+            <Container fluid>
+                <br></br>
+                <br></br>
 
+                <Row >
+                    <Col md={3} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
+                        <h1 className='titulo'> Tus carritos ... </h1>
+                        {
+
+                            carritos.map((carrito) =>
+                            (
+                                <div key={carrito.id}>
+                                    <CarritoFila carrito={carrito}></CarritoFila>
+                                </div>
+                            )
+                            )
+                        }
+                    </Col>
+                    <Col>
+                        <Paypal></Paypal>
+                    </Col>
+                </Row>
+            </Container>
+        )
     );
 }

@@ -1,0 +1,15 @@
+.carritoFila{
+    cursor: pointer;
+    color:#ebf4fa;
+    border-radius: 10px;
+    padding: auto;
+    border-color: rgb(197, 197, 197);
+    border-width: 2px;
+    justify-content: left;
+}
+
+.titulo{
+    color: #006655;
+    font-size: 24pt;
+    text-align:center;
+}

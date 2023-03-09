@@ -28,7 +28,8 @@ export default function IndexProduct() {
           <br></br>
           <br></br>
           {
-            listProduct.map((auto) => {
+            listProduct.map((auto) => 
+            {
               return (
                 <Col key={auto.id} className="cardProduct" style={{ maxHeight: "350px", minHeight: "250px", height: "300px", minWidth: "270px", maxWidth: "280px" }} 
                 onClick={() => {
@@ -60,7 +61,8 @@ export default function IndexProduct() {
                   <br></br>
                 </Col>
               )
-            })
+            }
+            )
           }
         </Row>
       </Col>
