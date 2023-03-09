@@ -30,7 +30,8 @@ export default function Carrito() {
             .then(response => {
                 setCarritos(response.data);
                 console.log(response.data);
-                console.log(carritos);
+                //console.log(response.data[0].id);
+                if(window.GlobalCarritoActual===null) window.GlobalCarritoActual=response.data[0].id;
             }).catch(error => {
                 console.log(error);
             });
@@ -39,6 +40,7 @@ export default function Carrito() {
     useEffect(() => {
         loadCarritos()
     }, [])
+
 
     
 

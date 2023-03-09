@@ -10027,7 +10027,8 @@ function Carrito() {
             return axios.post("http://127.0.0.1/electricarNE2/public/api/index_carritos", data, config).then(function (response) {
               setCarritos(response.data);
               console.log(response.data);
-              console.log(carritos);
+              //console.log(response.data[0].id);
+              if (window.GlobalCarritoActual === null) window.GlobalCarritoActual = response.data[0].id;
             })["catch"](function (error) {
               console.log(error);
             });
