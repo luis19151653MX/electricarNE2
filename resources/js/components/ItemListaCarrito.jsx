@@ -78,7 +78,7 @@ export default function CarritoProducto(props) {
 
                                     <td>
                                         <InputGroup className="mb-3">
-                                        <CloseButton variant='black'
+                                        <CloseButton 
                                                         onClick={() => {
                                                             cambioStatus()
                                                         }

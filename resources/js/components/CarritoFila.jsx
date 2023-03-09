@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, InputGroup, CloseButton } from 'react-bootstrap';
 import "../../css/carrito.css";
 
 export default function carritoFila(props) {
@@ -26,7 +26,26 @@ export default function carritoFila(props) {
             window.removeEventListener('click', handleClick);
         };
     }, []);
-    
+
+    //click eliminar un carrito
+    const cambioStatus = async () => {
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+            }
+        };
+        const data = new FormData();
+        data.append("id", props.carrito.id);
+        await axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_carrito", data, config)
+            .then(response => {
+                console.log(response);
+                window.location.reload();
+            }).catch(error => {
+                console.log(error);
+            });
+    }
+
 
     return (
         <Row className='carritoFila' style={{ backgroundColor: backgroundColor }} onClick={handleClick} >
@@ -40,8 +59,18 @@ export default function carritoFila(props) {
                     style={{ maxHeight: "50px", minHeight: "50px", minWidth: "50px", maxWidth: "50px" }}
                 />
             </Col>
-            <Col md={10}>
-                <h2 ><span>{props.carrito.id}: </span><span>{props.carrito.fecha_ultima_modificacion}</span></h2>
+            <Col md={8}>
+                <h2 ><span>{props.carrito.id}: </span><span>{props.carrito.fecha_ultima_modificacion}</span> </h2>
+            </Col>
+            <Col>
+                <InputGroup md={2}>
+                    <CloseButton
+                        onClick={() => {
+                            cambioStatus()
+                        }
+                        }>
+                    </CloseButton>
+                </InputGroup>
             </Col>
 
         </Row>

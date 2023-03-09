@@ -31,16 +31,45 @@ export default function ProductCard() {
         loadProduct()
     }, [])
 
+
+    const [showToastC, setShowToastC] = useState(false);
+    const toastCloseC = () => setShowToastC(false);
+    const toastShowC = () => {
+        storeListProduct();
+        setShowToastC(true);
+    }
+    const [position, setPosition] = useState('bottom-center');
+
+
+    const storeListProduct=async ()=>{
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+            }
+        };
+        const data = new FormData();
+        data.append("usuario_id", window.GlobalUsuarioId);
+        data.append("carrito_id", window.GlobalCarritoActual);
+        data.append("cantidad", 1);
+        data.append("producto_id", productoId);
+        await axios.post("http://127.0.0.1/electricarNE2/public/api/store_lista_carritos", data, config)
+            .then(response => {
+                console.log("añadido correctamente");
+            }).catch(error => {
+                console.log(error);
+            });
+    }
+
     return (
 
         <Container>
-            <br /> <br /> <br /> <br />
-            
+            <br></br>
             {
                 (location.state === null) ? <h1>No encontrado</h1>
                     : <>
-                    <h1 className='colorVerde' style={{ fontSize: 24 + "pt",textAlign:"left" }}><b>{producto.modelo}</b></h1>
-            <br /> <br /> <br />
+                        <h1 className='colorVerde' style={{ fontSize: 24 + "pt", textAlign: "left" }}><b>{producto.modelo}</b></h1>
+                        <br />  
                         <Row style={{ textAlign: "left" }}>
                             <Col >
                                 <br /> <br />  <br /> <br />
@@ -52,7 +81,7 @@ export default function ProductCard() {
                                 <h5> <span>Precio: </span> <span className='colorMorado'> ${producto.precio} MXN</span>  </h5>
                                 <h5><span>Precio con IVA:</span> <span className='colorMorado'> ${producto.precio * 1.16} MXN</span></h5>
                                 <h5 style={{ textAlign: "justify" }}>{producto.descripcion}</h5>
-                                
+
                                 <Row>
                                     <Col>
                                         <h5> Categoría: {producto.categoria}</h5>
@@ -60,8 +89,19 @@ export default function ProductCard() {
                                         <h5> Marca: {producto.marca}</h5>
                                     </Col>
                                 </Row>
+                                <Row>
+                                    <Button variant='primary' onClick={toastShowC}>Añadir al carrito</Button>
+                                </Row>
                             </Col>
                         </Row>
+                        <ToastContainer className="p-3" position={position}>
+                            <Toast show={showToastC} onClose={toastCloseC}>
+                                <Toast.Header>
+                                    <strong className="me-auto">Añadir al carrito</strong>
+                                </Toast.Header>
+                                <Toast.Body>Se añadió correctamente tu producto al carrito.</Toast.Body>
+                            </Toast>
+                        </ToastContainer>
                     </>
             }
         </Container>
