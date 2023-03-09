@@ -4,6 +4,7 @@ import Paypal from "./Paypal";
 import { useNavigate } from 'react-router-dom';
 import "../../css/carrito.css";
 import CarritoFila from "./CarritoFila";
+import ListaCarrito from './ListaCarritoActual';
 
 
 export default function Carrito() {
@@ -61,6 +62,7 @@ export default function Carrito() {
                             )
                         }
                     </Col>
+                    <ListaCarrito></ListaCarrito>
                     <Col>
                         <Paypal></Paypal>
                     </Col>
