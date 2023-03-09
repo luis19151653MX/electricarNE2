@@ -2,7 +2,6 @@ import { React, useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import "../../css/homeProducts.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../css/usuario.css';
 //idea para reproducir sonido: modal que pregunte si desea permitir sonido en la pagina
@@ -50,9 +49,9 @@ export default function IndexProduct() {
                   <Row>
                   
 
-                  <table class="table table-dark table-striped" id="table" >
-    <tr>
-            <td>{auto.id }</td> 
+                  <table class="table table-light table-striped" id="table" >
+    <tr class="dis">
+            <td >{auto.id }</td> 
             <td>{auto.modelo }</td>
             <td class="id"> {auto.descripcion} </td>
             <td>{auto.stock}</td>
