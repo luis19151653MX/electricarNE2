@@ -16,8 +16,6 @@ export default function Carrito() {
     }, [navigate]);
 
     const [carritos, setCarritos] = useState([]);
-    const [selectedId, setSelectedId] = useState(null);
-
     const loadCarritos = async () => {
         const config = {
             headers: {
