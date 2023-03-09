@@ -11398,6 +11398,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Container.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/ToastContainer.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Toast.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _css_colores_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/colores.css */ "./resources/css/colores.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -11464,8 +11467,56 @@ function ProductCard() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     loadProduct();
   }, []);
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    showToastC = _useState6[0],
+    setShowToastC = _useState6[1];
+  var toastCloseC = function toastCloseC() {
+    return setShowToastC(false);
+  };
+  var toastShowC = function toastShowC() {
+    storeListProduct();
+    setShowToastC(true);
+  };
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('bottom-center'),
+    _useState8 = _slicedToArray(_useState7, 2),
+    position = _useState8[0],
+    setPosition = _useState8[1];
+  var storeListProduct = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var config, data;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            config = {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+              }
+            };
+            data = new FormData();
+            data.append("usuario_id", window.GlobalUsuarioId);
+            data.append("carrito_id", window.GlobalCarritoActual);
+            data.append("cantidad", 1);
+            data.append("producto_id", productoId);
+            _context2.next = 8;
+            return axios.post("http://127.0.0.1/electricarNE2/public/api/store_lista_carritos", data, config).then(function (response) {
+              console.log("añadido correctamente");
+            })["catch"](function (error) {
+              console.log(error);
+            });
+          case 8:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return function storeListProduct() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), location.state === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), location.state === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
       children: "No encontrado"
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
@@ -11477,7 +11528,7 @@ function ProductCard() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
           children: producto.modelo
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
         style: {
           textAlign: "left"
         },
@@ -11522,8 +11573,29 @@ function ProductCard() {
                 children: [" Marca: ", producto.marca]
               })]
             })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              variant: "primary",
+              onClick: toastShowC,
+              children: "A\xF1adir al carrito"
+            })
           })]
         })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        className: "p-3",
+        position: position,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          show: showToastC,
+          onClose: toastCloseC,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"].Header, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              className: "me-auto",
+              children: "A\xF1adir al carrito"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"].Body, {
+            children: "Se a\xF1adi\xF3 correctamente tu producto al carrito."
+          })]
+        })
       })]
     })]
   });
@@ -41828,6 +41900,286 @@ function createBootstrapComponent(Component, opts) {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeProvider);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/Toast.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Toast.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _restart_hooks_useTimeout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @restart/hooks/useTimeout */ "./node_modules/@restart/hooks/esm/useTimeout.js");
+/* harmony import */ var _ToastFade__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ToastFade */ "./node_modules/react-bootstrap/esm/ToastFade.js");
+/* harmony import */ var _ToastHeader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ToastHeader */ "./node_modules/react-bootstrap/esm/ToastHeader.js");
+/* harmony import */ var _ToastBody__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ToastBody */ "./node_modules/react-bootstrap/esm/ToastBody.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+/* harmony import */ var _ToastContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ToastContext */ "./node_modules/react-bootstrap/esm/ToastContext.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+
+const Toast = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(({
+  bsPrefix,
+  className,
+  transition: Transition = _ToastFade__WEBPACK_IMPORTED_MODULE_4__["default"],
+  show = true,
+  animation = true,
+  delay = 5000,
+  autohide = false,
+  onClose,
+  bg,
+  ...props
+}, ref) => {
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_5__.useBootstrapPrefix)(bsPrefix, 'toast');
+
+  // We use refs for these, because we don't want to restart the autohide
+  // timer in case these values change.
+  const delayRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(delay);
+  const onCloseRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(onClose);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    delayRef.current = delay;
+    onCloseRef.current = onClose;
+  }, [delay, onClose]);
+  const autohideTimeout = (0,_restart_hooks_useTimeout__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  const autohideToast = !!(autohide && show);
+  const autohideFunc = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => {
+    if (autohideToast) {
+      onCloseRef.current == null ? void 0 : onCloseRef.current();
+    }
+  }, [autohideToast]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    // Only reset timer if show or autohide changes.
+    autohideTimeout.set(autohideFunc, delayRef.current);
+  }, [autohideTimeout, autohideFunc]);
+  const toastContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => ({
+    onClose
+  }), [onClose]);
+  const hasAnimation = !!(Transition && animation);
+  const toast = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    ...props,
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(bsPrefix, className, bg && `bg-${bg}`, !hasAnimation && (show ? 'show' : 'hide')),
+    role: "alert",
+    "aria-live": "assertive",
+    "aria-atomic": "true"
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ToastContext__WEBPACK_IMPORTED_MODULE_6__["default"].Provider, {
+    value: toastContext,
+    children: hasAnimation && Transition ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Transition, {
+      in: show,
+      unmountOnExit: true,
+      children: toast
+    }) : toast
+  });
+});
+Toast.displayName = 'Toast';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Object.assign(Toast, {
+  Body: _ToastBody__WEBPACK_IMPORTED_MODULE_7__["default"],
+  Header: _ToastHeader__WEBPACK_IMPORTED_MODULE_8__["default"]
+}));
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/ToastBody.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/ToastBody.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _createWithBsPrefix__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createWithBsPrefix */ "./node_modules/react-bootstrap/esm/createWithBsPrefix.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_createWithBsPrefix__WEBPACK_IMPORTED_MODULE_0__["default"])('toast-body'));
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/ToastContainer.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/ToastContainer.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+const positionClasses = {
+  'top-start': 'top-0 start-0',
+  'top-center': 'top-0 start-50 translate-middle-x',
+  'top-end': 'top-0 end-0',
+  'middle-start': 'top-50 start-0 translate-middle-y',
+  'middle-center': 'top-50 start-50 translate-middle',
+  'middle-end': 'top-50 end-0 translate-middle-y',
+  'bottom-start': 'bottom-0 start-0',
+  'bottom-center': 'bottom-0 start-50 translate-middle-x',
+  'bottom-end': 'bottom-0 end-0'
+};
+const ToastContainer = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(({
+  bsPrefix,
+  position,
+  containerPosition = 'absolute',
+  className,
+  // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+  as: Component = 'div',
+  ...props
+}, ref) => {
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_3__.useBootstrapPrefix)(bsPrefix, 'toast-container');
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Component, {
+    ref: ref,
+    ...props,
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(bsPrefix, position && [containerPosition ? `position-${containerPosition}` : null, positionClasses[position]], className)
+  });
+});
+ToastContainer.displayName = 'ToastContainer';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ToastContainer);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/ToastContext.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/ToastContext.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+const ToastContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  onClose() {}
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ToastContext);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/ToastFade.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/ToastFade.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_transition_group_Transition__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-transition-group/Transition */ "./node_modules/react-transition-group/esm/Transition.js");
+/* harmony import */ var _Fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Fade */ "./node_modules/react-bootstrap/esm/Fade.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+const fadeStyles = {
+  [react_transition_group_Transition__WEBPACK_IMPORTED_MODULE_2__.ENTERING]: 'showing',
+  [react_transition_group_Transition__WEBPACK_IMPORTED_MODULE_2__.EXITING]: 'showing show'
+};
+const ToastFade = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((props, ref) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Fade__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  ...props,
+  ref: ref,
+  transitionClasses: fadeStyles
+}));
+ToastFade.displayName = 'ToastFade';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ToastFade);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/ToastHeader.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/ToastHeader.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _restart_hooks_useEventCallback__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @restart/hooks/useEventCallback */ "./node_modules/@restart/hooks/esm/useEventCallback.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+/* harmony import */ var _CloseButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CloseButton */ "./node_modules/react-bootstrap/esm/CloseButton.js");
+/* harmony import */ var _ToastContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ToastContext */ "./node_modules/react-bootstrap/esm/ToastContext.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+const defaultProps = {
+  closeLabel: 'Close',
+  closeButton: true
+};
+const ToastHeader = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(({
+  bsPrefix,
+  closeLabel,
+  closeVariant,
+  closeButton,
+  className,
+  children,
+  ...props
+}, ref) => {
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_4__.useBootstrapPrefix)(bsPrefix, 'toast-header');
+  const context = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_ToastContext__WEBPACK_IMPORTED_MODULE_5__["default"]);
+  const handleClick = (0,_restart_hooks_useEventCallback__WEBPACK_IMPORTED_MODULE_2__["default"])(e => {
+    context == null ? void 0 : context.onClose == null ? void 0 : context.onClose(e);
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    ref: ref,
+    ...props,
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(bsPrefix, className),
+    children: [children, closeButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_CloseButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      "aria-label": closeLabel,
+      variant: closeVariant,
+      onClick: handleClick,
+      "data-dismiss": "toast"
+    })]
+  });
+});
+ToastHeader.displayName = 'ToastHeader';
+ToastHeader.defaultProps = defaultProps;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ToastHeader);
 
 /***/ }),
 
