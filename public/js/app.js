@@ -10656,6 +10656,34 @@ function CarritoProducto(props) {
       return _ref.apply(this, arguments);
     };
   }();
+  var cambioStatus = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var config, data;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            config = {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+              }
+            };
+            data = new FormData();
+            data.append("id", props.lista.id);
+            _context2.next = 5;
+            return axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config).then(function (response) {})["catch"](function (error) {
+              console.log(error);
+            });
+          case 5:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return function cambioStatus() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     loadProduct();
   }, []);
@@ -10696,7 +10724,9 @@ function CarritoProducto(props) {
               className: "mb-3",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
                 variant: "black",
-                onClick: function onClick() {}
+                onClick: function onClick() {
+                  cambioStatus();
+                }
               })
             })
           })]
