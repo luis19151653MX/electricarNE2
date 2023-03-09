@@ -66,6 +66,13 @@ class CarritosComprasController extends Controller
         return $carritos_compras;
     }
 
+    public function cambioStatusVenta(Request $request){
+        $carritos_compras = carritos_compras::where('id', $request->id)->where('status', 'true')->where('statusVenta', 'cotización')->first();
+        $carritos_compras->status = 'false';
+        $carritos_compras->statusVenta = 'venta';
+        $carritos_compras->save();
+        return $carritos_compras;
+    }
     /**
      * Display the specified resource.
      *
