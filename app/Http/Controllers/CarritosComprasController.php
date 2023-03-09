@@ -53,7 +53,7 @@ class CarritosComprasController extends Controller
             'usuario_id' => $request->usuario_id,
             'status' => 'true',
             'fecha_ultima_modificacion' => now(),
-            'statusV' => 'true'
+            'statusVenta' => 'cotizacion'
         ]);
         $carritos_compras->save();
     }
