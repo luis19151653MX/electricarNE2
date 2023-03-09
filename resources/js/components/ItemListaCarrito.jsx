@@ -25,6 +25,26 @@ export default function CarritoProducto(props) {
             });
     }
 
+    const cambioStatus =async()=>{
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+            }
+        };
+        const data = new FormData();
+        data.append("id", props.lista.id);
+        await axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config)
+            .then(response => {
+
+            }).catch(error => {
+                console.log(error);
+            });   
+    }
+
+
+
+
     useEffect(() => {
         loadProduct()
     }, [])
@@ -58,10 +78,10 @@ export default function CarritoProducto(props) {
 
                                     <td>
                                         <InputGroup className="mb-3">
-                                        <CloseButton variant='black'
+                                        <CloseButton 
                                                         onClick={() => {
+                                                            cambioStatus()
                                                         }
-
                                                         }>
                                                     </CloseButton>
                                         </InputGroup>
