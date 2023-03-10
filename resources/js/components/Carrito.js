@@ -60,6 +60,8 @@ export default function Carrito() {
             });
     }
 
+    const [total,setTotal]=useState(window.GlobalTotalPagar);
+
     return (
         GlobalUsuarioId !== null && (
             <Row className='carritoRow'>
@@ -94,34 +96,9 @@ export default function Carrito() {
                                 )
                         }
                     </Col>
-
-                    <Col lg={2} style={{ minWidth: '250px', maxWidth: '350px', width: "270px",justifyContent: "center", alignItems:"center" }} >
-                    <h1 className='titulo'> Total a pagar con IVA:<br></br>$ 1000 mxn </h1>
-                        <br></br>
-                        <PayPal></PayPal>
-                    </Col>
             </Row>
         )
     );
 }
 
-/*
 
-<Col md={6} style={{ minWidth: '350px', maxWidth: '400px', width: "370px",justifyContent: "center", alignItems:"center" }}>
-                        {
-                            window.GlobalCarritoActual !== null ?
-                                (<ListaCarrito carritoAct={window.GlobalCarritoActual}></ListaCarrito>)
-                                :
-                                (
-                                    <h1>selecciona un carrito</h1>
-                                )
-                        }
-                    </Col>
-
-
-                    <Col md={2} style={{ minWidth: '250px', maxWidth: '300px', width: "270px",justifyContent: "center", alignItems:"center" }} >
-                        <h2>Total a pagar con IVA:<br></br>$ 1000 mxn</h2>
-                        <br></br>
-                        <PayPal></PayPal>
-                    </Col>
-*/

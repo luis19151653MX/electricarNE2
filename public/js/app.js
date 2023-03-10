@@ -10077,6 +10077,10 @@ function Carrito() {
       return _ref2.apply(this, arguments);
     };
   }();
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(window.GlobalTotalPagar),
+    _useState4 = _slicedToArray(_useState3, 2),
+    total = _useState4[0],
+    setTotal = _useState4[1];
   return GlobalUsuarioId !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: "carritoRow",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -10111,43 +10115,9 @@ function Carrito() {
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
         children: "selecciona un carrito"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      lg: 2,
-      style: {
-        minWidth: '250px',
-        maxWidth: '350px',
-        width: "270px",
-        justifyContent: "center",
-        alignItems: "center"
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
-        className: "titulo",
-        children: [" Total a pagar con IVA:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), "$ 1000 mxn "]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Paypal__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
     })]
   });
 }
-
-/*
-
-<Col md={6} style={{ minWidth: '350px', maxWidth: '400px', width: "370px",justifyContent: "center", alignItems:"center" }}>
-                        {
-                            window.GlobalCarritoActual !== null ?
-                                (<ListaCarrito carritoAct={window.GlobalCarritoActual}></ListaCarrito>)
-                                :
-                                (
-                                    <h1>selecciona un carrito</h1>
-                                )
-                        }
-                    </Col>
-
-
-                    <Col md={2} style={{ minWidth: '250px', maxWidth: '300px', width: "270px",justifyContent: "center", alignItems:"center" }} >
-                        <h2>Total a pagar con IVA:<br></br>$ 1000 mxn</h2>
-                        <br></br>
-                        <PayPal></PayPal>
-                    </Col>
-*/
 
 /***/ }),
 
@@ -10899,6 +10869,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ListaCarrito)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _ItemListaCarrito__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ItemListaCarrito */ "./resources/js/components/ItemListaCarrito.jsx");
 /* harmony import */ var _Paypal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Paypal */ "./resources/js/components/Paypal.js");
@@ -10925,7 +10896,10 @@ function ListaCarrito() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (GlobalUsuarioId === null) {
       navigate('/electricarNE2/public/Login');
-    } else loadLista();
+    } else {
+      loadLista();
+      loadTotal();
+    }
   }, [navigate]);
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
@@ -10962,13 +10936,46 @@ function ListaCarrito() {
       return _ref.apply(this, arguments);
     };
   }();
+  var loadTotal = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var config, data;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            config = {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+              }
+            };
+            data = new FormData();
+            data.append("id", window.GlobalCarritoActual);
+            _context2.next = 5;
+            return axios.post("http://127.0.0.1/electricarNE2/public/api/totalPagar_carrito", data, config).then(function (response) {
+              console.log("total:" + response.data);
+              window.GlobalTotalPagar = response.data;
+            })["catch"](function (error) {
+              console.log(error);
+            });
+          case 5:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return function loadTotal() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     loadLista();
+    loadTotal();
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     function handleClick(e) {
       // Aquí puedes hacer lo que necesites cuando se detecte un clic en lugar de movimiento del mouse
       loadLista();
+      loadTotal();
     }
     window.addEventListener('click', handleClick);
     return function () {
@@ -10976,15 +10983,31 @@ function ListaCarrito() {
     };
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
-      className: "titulo",
-      children: [" Productos del carrito: ", window.GlobalCarritoActual, " "]
-    }), lista.map(function (lista) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ItemListaCarrito__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          lista: lista
-        })
-      }, lista.id);
+    style: {
+      display: 'flex'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      md: "auto",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+        className: "titulo",
+        children: [" Productos del carrito: ", window.GlobalCarritoActual, " "]
+      }), lista.map(function (lista) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ItemListaCarrito__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            lista: lista
+          })
+        }, lista.id);
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      style: {
+        width: "250px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+        className: "titulo",
+        children: [" Total a Pagar: $", window.GlobalTotalPagar, " MXN "]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Paypal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        total: window.GlobalTotalPagar
+      })]
     })]
   });
 }
@@ -11452,10 +11475,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-function Paypal() {
+function Paypal(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-      pagan: 0
+      pagan: props.total
     }),
     _useState2 = _slicedToArray(_useState, 2),
     pago = _useState2[0],
@@ -11467,7 +11489,7 @@ function Paypal() {
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            pago.pagan = window.GlobalTotalPagar;
+            pago.pagan = props.total;
           case 1:
           case "end":
             return _context.stop();

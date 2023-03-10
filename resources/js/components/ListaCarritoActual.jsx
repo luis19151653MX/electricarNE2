@@ -11,7 +11,9 @@ export default function ListaCarrito() {
     useEffect(() => {
         if (GlobalUsuarioId === null) {
             navigate('/electricarNE2/public/Login');
-        } else loadLista();
+        } else {
+            loadLista();
+            loadTotal();}
     }, [navigate]);
 
 
@@ -29,6 +31,25 @@ export default function ListaCarrito() {
             .then(response => {
                 console.log("lista del carrito id:" + window.GlobalCarritoActual);
                 setLista(response.data);
+                
+            }).catch(error => {
+                console.log(error);
+            });
+    }
+
+    const loadTotal = async () => {
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+            }
+        };
+        const data = new FormData();
+        data.append("id", window.GlobalCarritoActual);
+        await axios.post("http://127.0.0.1/electricarNE2/public/api/totalPagar_carrito", data, config)
+            .then(response => {
+                console.log("total:"+response.data);
+                window.GlobalTotalPagar=response.data;
             }).catch(error => {
                 console.log(error);
             });
@@ -37,12 +58,14 @@ export default function ListaCarrito() {
 
     useEffect(() => {
         loadLista();
+        loadTotal();
     }, []);
 
     useEffect(() => {
         function handleClick(e) {
             // Aquí puedes hacer lo que necesites cuando se detecte un clic en lugar de movimiento del mouse
             loadLista();
+            loadTotal();
         }
         window.addEventListener('click', handleClick);
         return () => {
@@ -52,10 +75,10 @@ export default function ListaCarrito() {
 
 
     return (
-        <div>
-            <h1 className='titulo'> Productos del carrito: {window.GlobalCarritoActual} </h1>
+        <div style={{display:'flex'}}>
+            <Col md="auto">
+                <h1 className='titulo'> Productos del carrito: {window.GlobalCarritoActual} </h1>
             {
-
                 lista.map((lista) =>
                 (
                     <div key={lista.id}>
@@ -63,8 +86,13 @@ export default function ListaCarrito() {
                     </div>
                 )
                 )
-
             }
+            </Col>
+            <Col style={{width:"250px"}}>
+                <h1 className='titulo'> Total a Pagar: ${window.GlobalTotalPagar} MXN </h1>
+                <PayPal total={window.GlobalTotalPagar}></PayPal>
+            </Col>
+            
         </div>
     );
 }

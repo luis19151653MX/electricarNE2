@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { Container } from 'react-bootstrap'; 
 
-export default function Paypal() {
-  const [pago, setPago] = useState({ pagan: 0 });
+export default function Paypal(props) {
+  const [pago, setPago] = useState({ pagan: props.total });
 
   //funcion que se llama a si misma
   (async function cargar() {
-    pago.pagan = window.GlobalTotalPagar;
+    pago.pagan = props.total;
   })();
 
   return (
