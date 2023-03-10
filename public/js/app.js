@@ -10001,7 +10001,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Carrito() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (GlobalUsuarioId === null) {
+    if (window.GlobalUsuarioId === null) {
       navigate('/electricarNE2/public/Login');
     } else loadCarritos();
   }, [navigate]);
@@ -11501,6 +11501,36 @@ function Paypal(props) {
     }
     return cargar;
   })()();
+  var cambioStatusVenta = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var config, data;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            config = {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json'
+              }
+            };
+            data = new FormData();
+            data.append("id", window.GlobalCarritoActual);
+            _context2.next = 5;
+            return axios.post("http://127.0.0.1/electricarNE2/public/api/cambioStatusVenta", data, config).then(function (response) {
+              window.location.reload();
+            })["catch"](function (error) {
+              console.log(error);
+            });
+          case 5:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return function cambioStatusVenta() {
+      return _ref.apply(this, arguments);
+    };
+  }();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_1__.PayPalScriptProvider, {
     options: {
       "client-id": "ATopRVi_zcgIG4KmDjOQUzpKCm2yqwnNN4Zcon2ETEwWn2Q95xtM7SYeIHxuDUeusD_6GRxnFy6AMPhS"
@@ -11519,7 +11549,7 @@ function Paypal(props) {
         });
       },
       onApprove: function onApprove() {
-        console.log("carrito completado");
+        console.log("carrito completado"), cambioStatusVenta();
       }
     })
   });

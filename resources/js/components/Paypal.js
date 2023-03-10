@@ -9,6 +9,24 @@ export default function Paypal(props) {
     pago.pagan = props.total;
   })();
 
+
+  const cambioStatusVenta = async () => {
+    const config = {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Accept': 'application/json'
+        }
+    };
+    const data = new FormData();
+    data.append("id", window.GlobalCarritoActual);
+    await axios.post("http://127.0.0.1/electricarNE2/public/api/cambioStatusVenta", data, config)
+        .then(response => {
+            window.location.reload();
+        }).catch(error => {
+            console.log(error);
+        });
+}
+
   return (
       <PayPalScriptProvider options={{ "client-id": "ATopRVi_zcgIG4KmDjOQUzpKCm2yqwnNN4Zcon2ETEwWn2Q95xtM7SYeIHxuDUeusD_6GRxnFy6AMPhS" }}>
         <PayPalButtons
@@ -25,7 +43,7 @@ export default function Paypal(props) {
             });
           }}
           onApprove={() => {
-            console.log("carrito completado")
+            console.log("carrito completado"),cambioStatusVenta()
           }
           }
         />

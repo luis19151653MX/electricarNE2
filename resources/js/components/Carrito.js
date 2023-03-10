@@ -11,7 +11,7 @@ export default function Carrito() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (GlobalUsuarioId === null) {
+        if (window.GlobalUsuarioId === null) {
             navigate('/electricarNE2/public/Login');
         } else loadCarritos();
     }, [navigate]);
