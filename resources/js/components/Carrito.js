@@ -67,7 +67,7 @@ export default function Carrito() {
                 <br></br>
 
                     <Col md={3} style={{textAlign:"center" ,justifyContent:"center"}} >
-                        <h1 className='titulo'> Tus carritos ... </h1>
+                        <h1 className='titulo'> Tus carritos: </h1>
                         <br></br>
                         <Button variant="success" onClick={storeCarrito}> Nuevo carrito </Button>
                         <br></br>
@@ -75,7 +75,9 @@ export default function Carrito() {
 
                             carritos.map((carrito) =>
                             (
+                                
                                 <div key={carrito.id}>
+                                    <br></br>
                                     <CarritoFila carrito={carrito}></CarritoFila>
                                 </div>
                             )

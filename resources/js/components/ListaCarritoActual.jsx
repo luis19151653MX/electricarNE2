@@ -53,7 +53,7 @@ export default function ListaCarrito() {
 
     return (
         <div>
-            <h1 className='titulo'> Productos del carrito {window.GlobalCarritoActual} </h1>
+            <h1 className='titulo'> Productos del carrito: {window.GlobalCarritoActual} </h1>
             {
 
                 lista.map((lista) =>

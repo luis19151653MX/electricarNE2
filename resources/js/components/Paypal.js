@@ -11,7 +11,6 @@ export default function Paypal() {
   })();
 
   return (
-    <Container fluid>
       <PayPalScriptProvider options={{ "client-id": "ATopRVi_zcgIG4KmDjOQUzpKCm2yqwnNN4Zcon2ETEwWn2Q95xtM7SYeIHxuDUeusD_6GRxnFy6AMPhS" }}>
         <PayPalButtons
           style={{ layout: "horizontal" }}
@@ -30,10 +29,8 @@ export default function Paypal() {
             console.log("carrito completado")
           }
           }
-        />;
+        />
       </PayPalScriptProvider>
-
-    </Container>
   );
 }
 Paypal.defaultProps = {
