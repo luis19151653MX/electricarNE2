@@ -37,7 +37,7 @@ export default function CarritoProducto(props) {
         data.append("id", props.lista.id);
         await axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config)
             .then(response => {
-
+                window.location.reload();
             }).catch(error => {
                 console.log(error);
             });

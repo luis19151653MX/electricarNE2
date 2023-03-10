@@ -70,10 +70,5 @@ export default function IndexProduct() {
   );
 }
 
-/*
-        <CardGroup>
-          {listProduct.map(item => (<div key={item.id}><ItemProduct modelo={item.modelo} año={item.año} precio={item.precio} imagen={item.imagen} /></div>))}
-        </CardGroup>
-        */
 
 

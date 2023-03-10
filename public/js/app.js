@@ -10683,12 +10683,6 @@ function IndexProduct() {
   });
 }
 
-/*
-        <CardGroup>
-          {listProduct.map(item => (<div key={item.id}><ItemProduct modelo={item.modelo} año={item.año} precio={item.precio} imagen={item.imagen} /></div>))}
-        </CardGroup>
-        */
-
 /***/ }),
 
 /***/ "./resources/js/components/HomeUC.js":
@@ -10823,7 +10817,9 @@ function CarritoProducto(props) {
             data = new FormData();
             data.append("id", props.lista.id);
             _context2.next = 5;
-            return axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config).then(function (response) {})["catch"](function (error) {
+            return axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config).then(function (response) {
+              window.location.reload();
+            })["catch"](function (error) {
               console.log(error);
             });
           case 5:
