@@ -52,7 +52,7 @@ export default function ListaCarrito() {
 
 
     return (
-        <Col md={9} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
+        <div>
             <h1 className='titulo'> Productos del carrito {window.GlobalCarritoActual} </h1>
             {
 
@@ -65,13 +65,6 @@ export default function ListaCarrito() {
                 )
 
             }
-            {
-                    <Col xs lg={4}>
-                        <h1>Total a pagar con IVA:<br></br>$ {sessionStorage.getItem("totalPP")} mxn</h1>
-                        <br></br>
-                        <PayPal></PayPal>
-                    </Col>
-                }
-        </Col>
+        </div>
     );
 }

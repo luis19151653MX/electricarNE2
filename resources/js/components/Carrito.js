@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import "../../css/carrito.css";
 import CarritoFila from "./CarritoFila";
 import ListaCarrito from './ListaCarritoActual';
+import PayPal from "./Paypal";
 
 
 export default function Carrito() {
@@ -12,7 +13,7 @@ export default function Carrito() {
     useEffect(() => {
         if (GlobalUsuarioId === null) {
             navigate('/electricarNE2/public/Login');
-        }else loadCarritos();
+        } else loadCarritos();
     }, [navigate]);
 
     const [carritos, setCarritos] = useState([]);
@@ -41,7 +42,7 @@ export default function Carrito() {
         loadCarritos()
     }, [])
 
-    const storeCarrito=async ()=>{
+    const storeCarrito = async () => {
         const config = {
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -61,12 +62,11 @@ export default function Carrito() {
 
     return (
         GlobalUsuarioId !== null && (
-            <Container fluid>
+            <Row>
                 <br></br>
                 <br></br>
 
-                <Row >
-                    <Col md={3} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
+                    <Col md={3} style={{textAlign:"center" ,justifyContent:"center"}} >
                         <h1 className='titulo'> Tus carritos ... </h1>
                         <br></br>
                         <Button variant="success" onClick={storeCarrito}> Nuevo carrito </Button>
@@ -81,19 +81,39 @@ export default function Carrito() {
                             )
                             )
                         }
-                        
-                        
                     </Col>
-                    {
-                        window.GlobalCarritoActual !== null ?
-                            (<ListaCarrito carritoAct={window.GlobalCarritoActual}></ListaCarrito>)
-                            :
-                            (<Col md={3} lg={{ minWidth: '250px', maxWidth: '300px', width: "270px" }}>
-                                <h1>selecciona un carrito</h1>
-                            </Col>)
-                    }
-                </Row>
-            </Container>
+                    <Col lg="auto" style={{textAlign:"center", justifyContent:"center", minWidth:"520px"}} >
+                        {
+                            window.GlobalCarritoActual !== null ?
+                                (<ListaCarrito carritoAct={window.GlobalCarritoActual}></ListaCarrito>)
+                                :
+                                (
+                                    <h1>selecciona un carrito</h1>
+                                )
+                        }
+                    </Col>
+            </Row>
         )
     );
 }
+
+/*
+
+<Col md={6} style={{ minWidth: '350px', maxWidth: '400px', width: "370px",justifyContent: "center", alignItems:"center" }}>
+                        {
+                            window.GlobalCarritoActual !== null ?
+                                (<ListaCarrito carritoAct={window.GlobalCarritoActual}></ListaCarrito>)
+                                :
+                                (
+                                    <h1>selecciona un carrito</h1>
+                                )
+                        }
+                    </Col>
+
+
+                    <Col md={2} style={{ minWidth: '250px', maxWidth: '300px', width: "270px",justifyContent: "center", alignItems:"center" }} >
+                        <h2>Total a pagar con IVA:<br></br>$ 1000 mxn</h2>
+                        <br></br>
+                        <PayPal></PayPal>
+                    </Col>
+*/

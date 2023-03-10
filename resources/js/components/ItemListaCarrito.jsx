@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Table, Button, InputGroup, CloseButton } from 'react-bootstrap';
+import { Table, Button, InputGroup, CloseButton } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import "../../css/carrito.css";
 
 export default function CarritoProducto(props) {
-    
+
     const navigate = useNavigate();
 
     const [producto, setProducto] = useState({});
@@ -25,7 +26,7 @@ export default function CarritoProducto(props) {
             });
     }
 
-    const cambioStatus =async()=>{
+    const cambioStatus = async () => {
         const config = {
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -39,7 +40,7 @@ export default function CarritoProducto(props) {
 
             }).catch(error => {
                 console.log(error);
-            });   
+            });
     }
 
 
@@ -51,46 +52,48 @@ export default function CarritoProducto(props) {
 
 
     return (
-        <Col md={6} >
-            
-                        <Table style={{ textAlign: "center" }}>
-                            <tbody>
-                                <tr>
-                                    <td><img
-                                        width="220 px"
-                                        height="120 px"
-                                        src={producto.imagen}
-                                        title="Producto"
-                                        alt="Producto" />
-                                    </td>
 
-                                    <td><b>{producto.modelo}
-                                        <br />{producto.año}
-                                        <br />${producto.precio} mxn
-                                    </b>
-                                    </td>
+            <Table className='listaFila'>
+                <tbody>
+                    <tr>
+                        <td><img
+                            //imagen alternativa cuando no carga la imagen
+                            onError={({ currentTarget }) => {
+                                currentTarget.onerror = null; // prevents looping
+                                currentTarget.src = "https://www.evoximages.com/wp-content/uploads/2021/09/Forcolorspin2.gif";
+                            }}
+                            width="220 px"
+                            height="120 px"
+                            src={producto.imagen}
+                            title={producto.modelo}
+                            alt={producto.modelo} />
+                        </td>
 
-                                    <td>
-                                        <Button variant="primary" onClick={() => {
-                                            navigate('/electricarNE2/public/ProductCard',{state:{autoID:producto.id}});
-                                        }}> Ver producto</Button>
-                                    </td>
+                        <td><b>{producto.modelo}
+                            <br />{producto.año}
+                            <br />${producto.precio} mxn
+                        </b>
+                        </td>
 
-                                    <td>
-                                        <InputGroup className="mb-3">
-                                        <CloseButton 
-                                                        onClick={() => {
-                                                            cambioStatus()
-                                                        }
-                                                        }>
-                                                    </CloseButton>
-                                        </InputGroup>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                
-        </Col>
+                        <td>
+                            <Button variant="primary" onClick={() => {
+                                navigate('/electricarNE2/public/ProductCard', { state: { autoID: producto.id } });
+                            }}> Ver producto</Button>
+                        </td>
+
+                        <td>
+                            <InputGroup className="mb-3">
+                                <CloseButton
+                                    onClick={() => {
+                                        cambioStatus()
+                                    }
+                                    }>
+                                </CloseButton>
+                            </InputGroup>
+                        </td>
+                    </tr>
+                </tbody>
+            </Table>
     );
 }
 //<h1>{props.lista.producto_id}</h1>
