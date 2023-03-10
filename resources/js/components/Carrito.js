@@ -62,7 +62,7 @@ export default function Carrito() {
 
     return (
         GlobalUsuarioId !== null && (
-            <Row>
+            <Row className='carritoRow'>
                 <br></br>
                 <br></br>
 
@@ -91,6 +91,12 @@ export default function Carrito() {
                                     <h1>selecciona un carrito</h1>
                                 )
                         }
+                    </Col>
+
+                    <Col lg={2} style={{ minWidth: '250px', maxWidth: '350px', width: "270px",justifyContent: "center", alignItems:"center" }} >
+                    <h1 className='titulo'> Total a pagar con IVA:<br></br>$ 1000 mxn </h1>
+                        <br></br>
+                        <PayPal></PayPal>
                     </Col>
             </Row>
         )
