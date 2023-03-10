@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import ItemListaCarrito from "./ItemListaCarrito";
-import Paypal from "./Paypal";
+import PayPal from "./Paypal";
 
 export default function ListaCarrito() {
 
@@ -65,7 +65,13 @@ export default function ListaCarrito() {
                 )
 
             }
-            <Paypal></Paypal>
+            {
+                    <Col xs lg={4}>
+                        <h1>Total a pagar con IVA:<br></br>$ {sessionStorage.getItem("totalPP")} mxn</h1>
+                        <br></br>
+                        <PayPal></PayPal>
+                    </Col>
+                }
         </Col>
     );
 }

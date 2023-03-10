@@ -10953,7 +10953,13 @@ function ListaCarrito() {
           lista: lista
         })
       }, lista.id);
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Paypal__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      xs: true,
+      lg: 4,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+        children: ["Total a pagar con IVA:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "$ ", sessionStorage.getItem("totalPP"), " mxn"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Paypal__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+    })]
   });
 }
 
