@@ -7,7 +7,7 @@ export default function Paypal() {
 
   //funcion que se llama a si misma
   (async function cargar() {
-    pago.pagan = 10;
+    pago.pagan = window.GlobalTotalPagar;
   })();
 
   return (
