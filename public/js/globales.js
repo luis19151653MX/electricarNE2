@@ -1,3 +1,2 @@
-window.GlobalUsuarioId = 4;
+window.GlobalUsuarioId = parseInt(localStorage.getItem("usuarioId"))||null;
 window.GlobalCarritoActual = null;
-window.GlobalTotalPagar = 0;

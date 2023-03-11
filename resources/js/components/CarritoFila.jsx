@@ -47,6 +47,9 @@ export default function carritoFila(props) {
     }
 
 
+    
+
+
     return (
         <div className='carritoFila' style={{ backgroundColor: backgroundColor }} onClick={handleClick} >
             <Col style={{width:"50px"}}>

@@ -31,7 +31,6 @@ export default function ListaCarrito() {
             .then(response => {
                 console.log("lista del carrito id:" + window.GlobalCarritoActual);
                 setLista(response.data);
-                
             }).catch(error => {
                 console.log(error);
             });
