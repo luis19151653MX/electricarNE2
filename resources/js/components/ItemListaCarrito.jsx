@@ -4,10 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import "../../css/carrito.css";
 
 export default function CarritoProducto(props) {
-
     const navigate = useNavigate();
-
     const [producto, setProducto] = useState({});
+
+    useEffect(() => {
+        loadProduct()
+    }, [])
+
+    
 
     const loadProduct = async () => {
         const config = {
@@ -25,31 +29,6 @@ export default function CarritoProducto(props) {
                 console.log(error);
             });
     }
-
-    const cambioStatus = async () => {
-        const config = {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-                'Accept': 'application/json'
-            }
-        };
-        const data = new FormData();
-        data.append("id", props.lista.id);
-        await axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config)
-            .then(response => {
-                window.location.reload();
-            }).catch(error => {
-                console.log(error);
-            });
-    }
-
-
-
-
-    useEffect(() => {
-        loadProduct()
-    }, [])
-
 
     return (
 
@@ -84,10 +63,7 @@ export default function CarritoProducto(props) {
                         <td>
                             <InputGroup className="mb-3">
                                 <CloseButton
-                                    onClick={() => {
-                                        cambioStatus()
-                                    }
-                                    }>
+                                    onClick={props.borrarProducto}>
                                 </CloseButton>
                             </InputGroup>
                         </td>
@@ -96,4 +72,3 @@ export default function CarritoProducto(props) {
             </Table>
     );
 }
-//<h1>{props.lista.producto_id}</h1>

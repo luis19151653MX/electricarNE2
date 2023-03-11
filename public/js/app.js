@@ -10272,8 +10272,43 @@ function Carrito() {
     };
   }();
   function renderizarListaCarrito(lista) {
+    var cambioStatus = /*#__PURE__*/function () {
+      var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
+        var config, data;
+        return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+          while (1) switch (_context6.prev = _context6.next) {
+            case 0:
+              config = {
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                  'Accept': 'application/json'
+                }
+              };
+              data = new FormData();
+              data.append("id", lista.id);
+              _context6.next = 5;
+              return axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config).then(function (response) {
+                console.log("producto borrado" + lista.producto_id);
+                loadListaCarritos();
+              })["catch"](function (error) {
+                console.log(error);
+              });
+            case 5:
+            case "end":
+              return _context6.stop();
+          }
+        }, _callee6);
+      }));
+      return function cambioStatus() {
+        return _ref6.apply(this, arguments);
+      };
+    }();
+    function borrarProducto() {
+      cambioStatus();
+    }
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ItemListaCarrito__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      lista: lista
+      lista: lista,
+      borrarProducto: borrarProducto
     });
   }
   return window.GlobalUsuarioId != null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -10839,6 +10874,9 @@ function CarritoProducto(props) {
     _useState2 = _slicedToArray(_useState, 2),
     producto = _useState2[0],
     setProducto = _useState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    loadProduct();
+  }, []);
   var loadProduct = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var config, data;
@@ -10869,39 +10907,6 @@ function CarritoProducto(props) {
       return _ref.apply(this, arguments);
     };
   }();
-  var cambioStatus = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var config, data;
-      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-        while (1) switch (_context2.prev = _context2.next) {
-          case 0:
-            config = {
-              headers: {
-                'Content-Type': 'multipart/form-data',
-                'Accept': 'application/json'
-              }
-            };
-            data = new FormData();
-            data.append("id", props.lista.id);
-            _context2.next = 5;
-            return axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config).then(function (response) {
-              window.location.reload();
-            })["catch"](function (error) {
-              console.log(error);
-            });
-          case 5:
-          case "end":
-            return _context2.stop();
-        }
-      }, _callee2);
-    }));
-    return function cambioStatus() {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    loadProduct();
-  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "listaFila",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
@@ -10909,8 +10914,8 @@ function CarritoProducto(props) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             //imagen alternativa cuando no carga la imagen
-            onError: function onError(_ref3) {
-              var currentTarget = _ref3.currentTarget;
+            onError: function onError(_ref2) {
+              var currentTarget = _ref2.currentTarget;
               currentTarget.onerror = null; // prevents looping
               currentTarget.src = "https://www.evoximages.com/wp-content/uploads/2021/09/Forcolorspin2.gif";
             },
@@ -10940,9 +10945,7 @@ function CarritoProducto(props) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
             className: "mb-3",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
-              onClick: function onClick() {
-                cambioStatus();
-              }
+              onClick: props.borrarProducto
             })
           })
         })]
@@ -10950,7 +10953,6 @@ function CarritoProducto(props) {
     })
   });
 }
-//<h1>{props.lista.producto_id}</h1>
 
 /***/ }),
 

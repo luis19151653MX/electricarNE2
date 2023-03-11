@@ -192,9 +192,31 @@ export default function Carrito() {
             });
     }
 
+    
+
     function renderizarListaCarrito(lista) {
+        const cambioStatus = async () => {
+            const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Accept': 'application/json'
+                }
+            };
+            const data = new FormData();
+            data.append("id", lista.id);
+            await axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config)
+                .then(response => {
+                    console.log("producto borrado"+ lista.producto_id);
+                    loadListaCarritos();
+                }).catch(error => {
+                    console.log(error);
+                });
+        }
+       function borrarProducto(){
+        cambioStatus();
+       }
         return (
-            <ItemListaCarrito lista={lista}></ItemListaCarrito>
+            <ItemListaCarrito lista={lista} borrarProducto={borrarProducto}  ></ItemListaCarrito>
         );
     }
 
