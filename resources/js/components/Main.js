@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -15,10 +15,14 @@ import Profile from "./Profile";
 
 export default function Main() {
 
-    const [start, setStart] = useState(false);
-    window.onload = function cargando() {
-        localStorage.setItem("usuarioId",null);
-    }
+    //se manda lmar solo una vez cuando se monta el componente
+    useEffect(() => {
+        const usuarioId = localStorage.getItem("usuarioId");
+        if (usuarioId === null) {
+          localStorage.setItem("usuarioId", null);
+        }
+      }, []);
+      
     return (
         <div className='App'>
             <Container fluid style={{
