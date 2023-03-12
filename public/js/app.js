@@ -10316,7 +10316,7 @@ function Carrito() {
       borrarProducto: borrarProducto
     });
   }
-  return window.GlobalUsuarioId != null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  return window.GlobalUsuarioId != null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
       className: "carritoRow",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -10337,10 +10337,12 @@ function Carrito() {
             onClick: storeCarrito,
             children: " Nuevo carrito "
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), carritos.map(function (carrito) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), renderizarFilaCarrito(carrito)]
-          }, "carrito-".concat(carrito.id));
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          children: carritos.map(function (carrito) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), renderizarFilaCarrito(carrito)]
+            }, "carrito-".concat(carrito.id));
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
         lg: "auto",
@@ -19645,7 +19647,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".carritoRow{\r\n    justify-content: center;\r\n}\r\n\r\n.carritoFila {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-items:center;\r\n    min-width: 270px;\r\n    max-width: 270px;\r\n    cursor: pointer;\r\n    color: #ebf4fa;\r\n    border-radius: 10px;\r\n    padding: auto;\r\n    border-color: rgb(197, 197, 197);\r\n    border-width: 2px;\r\n    \r\n}\r\n.listaFila {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    align-items: center;\r\n    text-align:center; \r\n    max-width:500;\r\n    width: 470;\r\n    min-width: 470px;\r\n}\r\n\r\n.listaFila:hover{\r\n    background-color: #006655;\r\n    color:white;\r\n    transform: scale(1.02);\r\n    border-radius: 10px;\r\n}\r\n\r\n.titulo {\r\n    color: #006655;\r\n    font-size: 24pt;\r\n    text-align: center;\r\n}\r\n\r\n@keyframes pulse {\r\n    0% { background-color: #006655; color:white }\r\n    50% { background-color: #007965; }\r\n    100% { background-color: #006655; }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".carritoRow{\r\n    justify-content: center;\r\n}\r\n\r\n.carritoFila {\r\n    display: flex;\r\n    align-items:center;\r\n    min-width: 270px;\r\n    max-width: 270px;\r\n    cursor: pointer;\r\n    color: #ebf4fa;\r\n    border-radius: 10px;\r\n    padding: auto;\r\n    border-color: rgb(197, 197, 197);\r\n    border-width: 2px;\r\n}\r\n\r\n.listaFila {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    align-items: center;\r\n    text-align:center; \r\n    max-width:500;\r\n    width: 470;\r\n    min-width: 470px;\r\n}\r\n\r\n.listaFila:hover{\r\n    background-color: #006655;\r\n    color:white;\r\n    transform: scale(1.02);\r\n    border-radius: 10px;\r\n}\r\n\r\n.titulo {\r\n    color: #006655;\r\n    font-size: 24pt;\r\n    text-align: center;\r\n}\r\n\r\n@keyframes pulse {\r\n    0% { background-color: #006655; color:white }\r\n    50% { background-color: #007965; }\r\n    100% { background-color: #006655; }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -7,7 +7,7 @@ import PayPal from "./Paypal";
 
 
 import "../../css/carrito.css";
-import  "../../css/colores.css";
+import "../../css/colores.css";
 
 export default function Carrito() {
     const navigate = useNavigate();
@@ -118,7 +118,7 @@ export default function Carrito() {
 
         return (
             <div
-                className='carritoFila' 
+                className='carritoFila'
                 onClick={clickFila}
                 style={{
                     backgroundColor: isSelected ? '#006655' : '#d6ece9',
@@ -227,9 +227,21 @@ export default function Carrito() {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         window.GlobalUsuarioId != null && (
-            <div>
+            <>
                 <br></br>
                 <Row className='carritoRow'>
                     <br></br>
@@ -241,20 +253,22 @@ export default function Carrito() {
                             <Button className='botonAdd' onClick={storeCarrito}> Nuevo carrito </Button>
                         </div>
                         <br></br>
-                        
                         <br></br>
-                        {carritos.map((carrito) =>
-                        (
-                            <div key={`carrito-${carrito.id}`}>
-                                <br></br>
-                                {renderizarFilaCarrito(carrito)}
-                            </div>
-                        )
-                        )
-                        }
+                        <div>
+                            {carritos.map((carrito) =>
+                            (
+                                <div key={`carrito-${carrito.id}`}>
+                                    <br></br>
+                                    {renderizarFilaCarrito(carrito)}
+                                </div>
+                            )
+                            )
+                            }
+                        </div>
+
                     </Col>
 
-                    <Col lg="auto" style={{ displaytextAlign: "center",alignItems:"center", justifyContent: "center", minWidth: "270px" }} >
+                    <Col lg="auto" style={{ displaytextAlign: "center", alignItems: "center", justifyContent: "center", minWidth: "270px" }} >
                         <div style={{ display: 'flex' }}>
                             <Col md="auto" >
                                 <div style={{ minHeight: "100px" }}>
@@ -306,7 +320,7 @@ export default function Carrito() {
                         </div>
                     </Col>
                 </Row>
-            </div>
+            </>
         )
     );
 }
