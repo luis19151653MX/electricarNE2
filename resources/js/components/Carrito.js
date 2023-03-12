@@ -129,7 +129,7 @@ export default function Carrito() {
             >
                 <Col style={{ width: "50px" }}>
                     <img
-                        src="https://cdn-icons-png.flaticon.com/512/308/308833.png"
+                        src="https://cdn-icons-png.flaticon.com/512/641/641813.png"
                         title="carrito"
                         alt="carrito"
                         width="100%"

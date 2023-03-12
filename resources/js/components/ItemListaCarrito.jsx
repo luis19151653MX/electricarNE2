@@ -35,7 +35,8 @@ export default function CarritoProducto(props) {
             <Table className='listaFila'>
                 <tbody>
                     <tr>
-                        <td onClick={() => {
+                        <td style={{cursor:"pointer"}} 
+                        onClick={() => {
                                 navigate('/electricarNE2/public/ProductCard', { state: { autoID: producto.id } });
                             }}><img
                             //imagen alternativa cuando no carga la imagen
@@ -50,7 +51,7 @@ export default function CarritoProducto(props) {
                             alt={producto.modelo} />
                         </td>
 
-                        <td style={{minWidth:"200px", fontSize:"16px"}} 
+                        <td style={{minWidth:"200px", fontSize:"16px", cursor:"pointer"}} 
                         onClick={() => {
                                 navigate('/electricarNE2/public/ProductCard', { state: { autoID: producto.id } });
                             }}><b>{producto.modelo}

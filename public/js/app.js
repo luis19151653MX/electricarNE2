@@ -10162,7 +10162,7 @@ function Carrito() {
           width: "50px"
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-          src: "https://cdn-icons-png.flaticon.com/512/308/308833.png",
+          src: "https://cdn-icons-png.flaticon.com/512/641/641813.png",
           title: "carrito",
           alt: "carrito",
           width: "100%",
@@ -10921,6 +10921,9 @@ function CarritoProducto(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          style: {
+            cursor: "pointer"
+          },
           onClick: function onClick() {
             navigate('/electricarNE2/public/ProductCard', {
               state: {
@@ -10944,7 +10947,8 @@ function CarritoProducto(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
           style: {
             minWidth: "200px",
-            fontSize: "16px"
+            fontSize: "16px",
+            cursor: "pointer"
           },
           onClick: function onClick() {
             navigate('/electricarNE2/public/ProductCard', {
