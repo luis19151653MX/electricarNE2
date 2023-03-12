@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import  "../../css/colores.css";
 
 export default function Paypal(props) {
   const [pago, setPago] = useState({ pagan: props.total });
@@ -29,8 +30,8 @@ export default function Paypal(props) {
 
   return (
       <PayPalScriptProvider options={{ "client-id": "ATopRVi_zcgIG4KmDjOQUzpKCm2yqwnNN4Zcon2ETEwWn2Q95xtM7SYeIHxuDUeusD_6GRxnFy6AMPhS" }}>
-        <PayPalButtons
-          style={{ layout: "horizontal" }}
+        <PayPalButtons 
+          style={{ layout: "horizontal", color:"black", label:"checkout", tagline:"false" }}
           createOrder={(data, actions) => {
             return actions.order.create({
               purchase_units: [
