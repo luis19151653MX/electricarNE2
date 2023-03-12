@@ -11672,14 +11672,7 @@ function ProductCard() {
           textAlign: "left"
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "  ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            alt: producto.modelo,
-            title: producto.modelo,
-            src: producto.imagen,
-            width: 550
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          md: "5",
+          md: "6",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
             className: "colorVerde",
             children: "Caracter\xEDsticas"
@@ -11712,9 +11705,24 @@ function ProductCard() {
                 children: [" Marca: ", producto.marca]
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "  ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+              alt: producto.modelo //imagen alternativa cuando no carga la imagen
+              ,
+              onError: function onError(_ref3) {
+                var currentTarget = _ref3.currentTarget;
+                currentTarget.onerror = null; // prevents looping
+                currentTarget.src = "https://www.evoximages.com/wp-content/uploads/2021/09/Forcolorspin2.gif";
+              },
+              title: producto.modelo,
+              src: producto.imagen,
+              width: 550
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
-              variant: "primary",
+              className: "botonAdd",
               onClick: toastShowC,
               children: "A\xF1adir al carrito"
             })
@@ -19642,7 +19650,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".colorVerde{\r\n    color: #006655\r\n}\r\n\r\n.colorMorado{\r\n    color: #5664DE\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".botonAdd{\r\n    animation-name: temblor;\r\n    animation-duration: 15s;\r\n    animation-iteration-count: infinite;\r\n}\r\n\r\n.colorVerde {\r\n    color: #006655\r\n}\r\n\r\n.colorMorado {\r\n    color: #5664DE\r\n}\r\n\r\n@keyframes temblor {\r\n    0% {\r\n        transform: translate(0, 0) rotate(0deg);\r\n        background-color: #006655;\r\n    }\r\n\r\n    10% {\r\n        transform: translate(-2px, 0) rotate(-2deg);\r\n        background-color: #2d5851;\r\n    }\r\n\r\n    20% {\r\n        transform: translate(2px, 0) rotate(2deg);\r\n        background-color: #006655;\r\n    }\r\n\r\n    30% {\r\n        transform: translate(-2px, 0) rotate(-2deg);\r\n        background-color: #2d5851;\r\n    }\r\n\r\n    40% {\r\n        transform: translate(2px, 0) rotate(2deg);\r\n        background-color: #006655;\r\n    }\r\n\r\n    50% {\r\n        transform: translate(-2px, 0) rotate(-2deg);\r\n        background-color: #2d5851;\r\n    }\r\n\r\n    60% {\r\n        transform: translate(2px, 0) rotate(2deg);\r\n        background-color: #006655;\r\n    }\r\n\r\n    70% {\r\n        transform: translate(-2px, 0) rotate(-2deg);\r\n        background-color: #2d5851;\r\n    }\r\n\r\n    80% {\r\n        transform: translate(2px, 0) rotate(2deg);\r\n        background-color: #006655;\r\n    }\r\n\r\n    90% {\r\n        transform: translate(-2px, 0) rotate(-2deg);\r\n        background-color: #2d5851;\r\n    }\r\n\r\n    100% {\r\n        transform: translate(0, 0) rotate(0deg);\r\n        background-color: #006655;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
