@@ -5,8 +5,8 @@
 .carritoFila {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items:center;
     min-width: 300px;
     cursor: pointer;
     color: #ebf4fa;
@@ -33,4 +33,10 @@
     color: #006655;
     font-size: 24pt;
     text-align: center;
+}
+
+@keyframes pulse {
+    0% { background-color: #006655; color:white }
+    50% { background-color: #007965; }
+    100% { background-color: #006655; }
 }

@@ -118,7 +118,10 @@ export default function Carrito() {
                 className='carritoFila'
                 onClick={clickFila}
                 style={{
-                    backgroundColor: isSelected ? '#00b62d' : '#0d8f79'
+                    backgroundColor: isSelected ? '#006655' : '#d6ece9',
+                    color: isSelected ? "white" : "#757575",
+                    animation: isSelected ? 'pulse 2s infinite' : 'none',
+                    transform: isSelected ? 'scale(1.1)' : 'scale(1)'
                 }}
             >
                 <Col style={{ width: "50px" }}>
@@ -192,7 +195,7 @@ export default function Carrito() {
             });
     }
 
-    
+
 
     function renderizarListaCarrito(lista) {
         const cambioStatus = async () => {
@@ -206,15 +209,15 @@ export default function Carrito() {
             data.append("id", lista.id);
             await axios.post("http://127.0.0.1/electricarNE2/public/api/cambiostatus_lista_carritos", data, config)
                 .then(response => {
-                    console.log("producto borrado"+ lista.producto_id);
+                    console.log("producto borrado" + lista.producto_id);
                     loadListaCarritos();
                 }).catch(error => {
                     console.log(error);
                 });
         }
-       function borrarProducto(){
-        cambioStatus();
-       }
+        function borrarProducto() {
+            cambioStatus();
+        }
         return (
             <ItemListaCarrito lista={lista} borrarProducto={borrarProducto}  ></ItemListaCarrito>
         );
@@ -223,80 +226,83 @@ export default function Carrito() {
 
     return (
         window.GlobalUsuarioId != null && (
-            <Row className='carritoRow'>
+            <div>
                 <br></br>
-                <br></br>
+                <Row className='carritoRow'>
+                    <br></br>
+                    <br></br>
 
-                <Col md={3} style={{ textAlign: "center", justifyContent: "center" }} >
-                    <div style={{ minHeight: "100px" }}>
-                        <h1 className='titulo'> Tus carritos: </h1>
-                    </div>
-                    <br></br>
-                    <Button variant="success" onClick={storeCarrito}> Nuevo carrito </Button>
-                    <br></br>
-                    {carritos.map((carrito) =>
-                    (
-                        <div key={`carrito-${carrito.id}`}>
-                            <br></br>
-                            {renderizarFilaCarrito(carrito)}
+                    <Col md={3} style={{ textAlign: "center", justifyContent: "center" }} >
+                        <div style={{ minHeight: "100px" }}>
+                            <h1 className='titulo'> Tus carritos: </h1>
                         </div>
-                    )
-                    )
-                    }
-                </Col>
-
-                <Col lg="auto" style={{ textAlign: "center", justifyContent: "center", minWidth: "520px" }} >
-                    <div style={{ display: 'flex' }}>
-                        <Col md="auto" >
-                            <div style={{ minHeight: "100px" }}>
-                                <h1 className='titulo'> Productos del carrito: {window.GlobalCarritoActual} </h1>
+                        <br></br>
+                        <Button variant="success" onClick={storeCarrito}> Nuevo carrito </Button>
+                        <br></br>
+                        {carritos.map((carrito) =>
+                        (
+                            <div key={`carrito-${carrito.id}`}>
+                                <br></br>
+                                {renderizarFilaCarrito(carrito)}
                             </div>
-                            {listaCarrito.length === 0 ?
-                                (
-                                    <>
-                                        <br></br>
-                                        <h2>El carrito está vacío</h2>
-                                        <Button variant="primary">Visita nuestro cátalogo</Button>
-                                    </>
-                                )
-                                :
-                                (
-                                    window.GlobalCarritoActual !== null ?
-                                        (
-                                            listaCarrito.map((lista) =>
+                        )
+                        )
+                        }
+                    </Col>
+
+                    <Col lg="auto" style={{ textAlign: "center", justifyContent: "center", minWidth: "520px" }} >
+                        <div style={{ display: 'flex' }}>
+                            <Col md="auto" >
+                                <div style={{ minHeight: "100px" }}>
+                                    <h1 className='titulo'> Productos del carrito: {window.GlobalCarritoActual} </h1>
+                                </div>
+                                {listaCarrito.length === 0 ?
+                                    (
+                                        <>
+                                            <br></br>
+                                            <h2>El carrito está vacío</h2>
+                                            <Button variant="primary">Visita nuestro cátalogo</Button>
+                                        </>
+                                    )
+                                    :
+                                    (
+                                        window.GlobalCarritoActual !== null ?
                                             (
-                                                <div key={`lista-carrito-${lista.id}`}>
-                                                    <br></br>
-                                                    {renderizarListaCarrito(lista)}
-                                                </div>
+                                                listaCarrito.map((lista) =>
+                                                (
+                                                    <div key={`lista-carrito-${lista.id}`}>
+                                                        <br></br>
+                                                        {renderizarListaCarrito(lista)}
+                                                    </div>
+                                                )
+                                                )
                                             )
+                                            :
+                                            (
+                                                <h1>selecciona un carrito</h1>
                                             )
-                                        )
-                                        :
-                                        (
-                                            <h1>selecciona un carrito</h1>
-                                        )
-                                )
-                            }
-                        </Col>
-                        <Col style={{ width: "250px" }}>
-                            {
-                                totalPagar != 0 && (
-                                    <>
-                                        <div style={{ minHeight: "100px" }}>
-                                            <h1 className='titulo'> Total a Pagar: ${totalPagar} MXN </h1>
-                                        </div>
-                                        <br></br>
-                                        <PayPal total={totalPagar}></PayPal>
-                                    </>
-                                )
-                            }
+                                    )
+                                }
+                            </Col>
+                            <Col style={{ width: "250px" }}>
+                                {
+                                    totalPagar != 0 && (
+                                        <>
+                                            <div style={{ minHeight: "100px" }}>
+                                                <h1 className='titulo'> Total a Pagar: ${totalPagar} MXN </h1>
+                                            </div>
+                                            <br></br>
+                                            <PayPal total={totalPagar}></PayPal>
+                                        </>
+                                    )
+                                }
 
-                        </Col>
+                            </Col>
 
-                    </div>
-                </Col>
-            </Row>
+                        </div>
+                    </Col>
+                </Row>
+            </div>
         )
     );
 }
