@@ -35,7 +35,9 @@ export default function CarritoProducto(props) {
             <Table className='listaFila'>
                 <tbody>
                     <tr>
-                        <td><img
+                        <td onClick={() => {
+                                navigate('/electricarNE2/public/ProductCard', { state: { autoID: producto.id } });
+                            }}><img
                             //imagen alternativa cuando no carga la imagen
                             onError={({ currentTarget }) => {
                                 currentTarget.onerror = null; // prevents looping
@@ -48,21 +50,18 @@ export default function CarritoProducto(props) {
                             alt={producto.modelo} />
                         </td>
 
-                        <td><b>{producto.modelo}
+                        <td style={{minWidth:"200px", fontSize:"16px"}} 
+                        onClick={() => {
+                                navigate('/electricarNE2/public/ProductCard', { state: { autoID: producto.id } });
+                            }}><b>{producto.modelo}
                             <br />{producto.año}
                             <br />${producto.precio} mxn
                         </b>
                         </td>
 
-                        <td>
-                            <Button variant="primary" onClick={() => {
-                                navigate('/electricarNE2/public/ProductCard', { state: { autoID: producto.id } });
-                            }}> Ver producto</Button>
-                        </td>
-
-                        <td>
+                        <td style={{cursor: "default"}}>
                             <InputGroup className="mb-3">
-                                <CloseButton
+                                <CloseButton style={{cursor: "crosshair"}}
                                     onClick={props.borrarProducto}>
                                 </CloseButton>
                             </InputGroup>

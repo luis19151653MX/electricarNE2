@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Button, InputGroup, CloseButton } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import "../../css/carrito.css";
+
 import ItemListaCarrito from "./ItemListaCarrito";
 import PayPal from "./Paypal";
 
+
+import "../../css/carrito.css";
+import  "../../css/colores.css";
 
 export default function Carrito() {
     const navigate = useNavigate();
@@ -115,7 +118,7 @@ export default function Carrito() {
 
         return (
             <div
-                className='carritoFila'
+                className='carritoFila' 
                 onClick={clickFila}
                 style={{
                     backgroundColor: isSelected ? '#006655' : '#d6ece9',
@@ -235,9 +238,10 @@ export default function Carrito() {
                     <Col md={3} style={{ textAlign: "center", justifyContent: "center" }} >
                         <div style={{ minHeight: "100px" }}>
                             <h1 className='titulo'> Tus carritos: </h1>
+                            <Button className='botonAdd' onClick={storeCarrito}> Nuevo carrito </Button>
                         </div>
                         <br></br>
-                        <Button variant="success" onClick={storeCarrito}> Nuevo carrito </Button>
+                        
                         <br></br>
                         {carritos.map((carrito) =>
                         (
@@ -250,7 +254,7 @@ export default function Carrito() {
                         }
                     </Col>
 
-                    <Col lg="auto" style={{ textAlign: "center", justifyContent: "center", minWidth: "520px" }} >
+                    <Col lg="auto" style={{ displaytextAlign: "center",alignItems:"center", justifyContent: "center", minWidth: "270px" }} >
                         <div style={{ display: 'flex' }}>
                             <Col md="auto" >
                                 <div style={{ minHeight: "100px" }}>
