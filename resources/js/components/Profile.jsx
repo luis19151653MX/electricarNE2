@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Button, Row, Col } from 'react-bootstrap';
+import { Container, Button, Row, Col, Toast, ToastContainer, Table, Modal, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
-import colores from "../../css/colores.css";
+import "../../css/colores.css";
 
 export default function UserProfile() {
     const navigate = useNavigate();
