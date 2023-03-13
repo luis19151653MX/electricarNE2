@@ -37,7 +37,9 @@ export default function IndexProduct() {
                   navigate('/electricarNE2/public/ProductCard',{state:{autoID:auto.id}});
                 }}>
                   <br></br>
+                  <div class="img" >
                   <Row>
+                    
                     <img
                       src={auto.imagen}
                       //imagen alternativa cuando no carga la imagen
@@ -59,6 +61,7 @@ export default function IndexProduct() {
                   </Row>
                   <br></br>
                   <br></br>
+                  </div>
                 </Col>
               )
             }

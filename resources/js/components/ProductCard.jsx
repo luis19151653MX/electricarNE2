@@ -68,8 +68,17 @@ export default function ProductCard() {
             {
                 (location.state === null) ? <h1>No encontrado</h1>
                     : <>
+<<<<<<< HEAD
+                    <h1 className='colorVerde' style={{ fontSize: 24 + "pt",textAlign:"center" }}><b>{producto.modelo}</b></h1>
+            <br /> <br /> <br />
+=======
                         <h1 className='colorVerde' style={{ fontSize: 24 + "pt", textAlign: "left" }}><b>{producto.modelo}</b></h1>
+<<<<<<< HEAD
+                        <br />  
+>>>>>>> 1a54eae2f62a5b391fcf643d12a20ac7b653a03e
+=======
                         <br />
+>>>>>>> 750dcaf9f72abd206dcdc01dfd81dc36b2791403
                         <Row style={{ textAlign: "left" }}>
                             <Col md="6" >
                                 <h4 className='colorVerde'>Características</h4>
