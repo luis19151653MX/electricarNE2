@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Button, Row, Col, Toast, ToastContainer, Table, Modal, Form } from 'react-bootstrap';
+import { Container, Button, Row, Col } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import colores from "../../css/colores.css";
 
@@ -7,6 +7,18 @@ export default function UserProfile() {
     const navigate = useNavigate();
     const [userId, setUsuarioId] = useState(window.GlobalUsuarioId);
     const [usuario, setUsuario] = useState({});
+
+    //se manda llamar solo una vez cuando se monta el componente
+    useEffect(() => {
+        const compruebaLogin = () => {
+            if (window.GlobalUsuarioId === null) {
+                navigate('/electricarNE2/public/Login');
+            } else {
+                loadUser();
+            }
+        };
+        compruebaLogin();
+    }, [])
 
     const loadUser = async () => {
         const config = {
@@ -30,9 +42,11 @@ export default function UserProfile() {
         navigate('/electricarNE2/public/Home');
      }
 
+     /*
     useEffect(() => {
         loadUser()
     }, [])
+    */
 
     return (
         <Container>

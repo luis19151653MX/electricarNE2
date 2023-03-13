@@ -11820,6 +11820,18 @@ function UserProfile() {
     _useState4 = _slicedToArray(_useState3, 2),
     usuario = _useState4[0],
     setUsuario = _useState4[1];
+
+  //se manda llamar solo una vez cuando se monta el componente
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var compruebaLogin = function compruebaLogin() {
+      if (window.GlobalUsuarioId === null) {
+        navigate('/electricarNE2/public/Login');
+      } else {
+        loadUser();
+      }
+    };
+    compruebaLogin();
+  }, []);
   var loadUser = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var config, data;
@@ -11855,9 +11867,13 @@ function UserProfile() {
     window.GlobalUsuarioId = null;
     navigate('/electricarNE2/public/Home');
   }
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    loadUser();
-  }, []);
+
+  /*
+  useEffect(() => {
+     loadUser()
+  }, [])
+  */
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h1", {
       align: "center",
