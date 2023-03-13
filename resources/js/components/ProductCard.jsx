@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Button, Row, Col, Toast, ToastContainer } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import  "../../css/colores.css";
+import "../../css/colores.css";
 
 export default function ProductCard() {
     const location = useLocation();
@@ -67,20 +67,11 @@ export default function ProductCard() {
             <br></br>
             {
                 (location.state === null) ? <h1>No encontrado</h1>
-                    : <>
-<<<<<<< HEAD
-                    <h1 className='colorVerde' style={{ fontSize: 24 + "pt",textAlign:"center" }}><b>{producto.modelo}</b></h1>
-            <br /> <br /> <br />
-=======
-                        <h1 className='colorVerde' style={{ fontSize: 24 + "pt", textAlign: "left" }}><b>{producto.modelo}</b></h1>
-<<<<<<< HEAD
-                        <br />  
->>>>>>> 1a54eae2f62a5b391fcf643d12a20ac7b653a03e
-=======
-                        <br />
->>>>>>> 750dcaf9f72abd206dcdc01dfd81dc36b2791403
-                        <Row style={{ textAlign: "left" }}>
-                            <Col md="6" >
+                    :
+
+                    <>
+                        <h1 className='colorVerde' style={{ fontSize: 24 + "pt", textAlign: "center" }}><b>{producto.modelo}</b></h1><br /><br /><br /><Row style={{ textAlign: "left" }}>
+                            <Col md="6">
                                 <h4 className='colorVerde'>Características</h4>
                                 <br></br>
                                 <h5> <span>Precio: </span> <span className='colorMorado'> ${producto.precio} MXN</span>  </h5>
@@ -95,7 +86,7 @@ export default function ProductCard() {
                                 </Row>
                             </Col>
 
-                            <Col >
+                            <Col>
                                 <Row>
                                     <br /> <br />  <br /> <br />
                                     <img
@@ -114,10 +105,7 @@ export default function ProductCard() {
                                     <Button className='botonAdd' onClick={toastShowC}>Añadir al carrito</Button>
                                 </Row>
                             </Col>
-                        </Row>
-
-
-                        <ToastContainer className="p-3" position={position}>
+                        </Row><ToastContainer className="p-3" position={position}>
                             <Toast show={showToastC} onClose={toastCloseC}>
                                 <Toast.Header>
                                     <strong className="me-auto">Añadir al carrito</strong>
