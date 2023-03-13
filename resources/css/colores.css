@@ -1,7 +1,70 @@
-.colorVerde{
+.botonAdd{
+    animation-name: temblor;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+.colorVerde {
     color: #006655
 }
 
-.colorMorado{
+.colorMorado {
     color: #5664DE
+}
+
+@keyframes temblor {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        background-color: #006655;
+    }
+
+    10% {
+        transform: translate(-2px, 0) rotate(-2deg);
+        background-color: #2d5851;
+    }
+
+    20% {
+        transform: translate(2px, 0) rotate(2deg);
+        background-color: #006655;
+    }
+
+    30% {
+        transform: translate(-2px, 0) rotate(-2deg);
+        background-color: #2d5851;
+    }
+
+    40% {
+        transform: translate(2px, 0) rotate(2deg);
+        background-color: #006655;
+    }
+
+    50% {
+        transform: translate(-2px, 0) rotate(-2deg);
+        background-color: #2d5851;
+    }
+
+    60% {
+        transform: translate(2px, 0) rotate(2deg);
+        background-color: #006655;
+    }
+
+    70% {
+        transform: translate(-2px, 0) rotate(-2deg);
+        background-color: #2d5851;
+    }
+
+    80% {
+        transform: translate(2px, 0) rotate(2deg);
+        background-color: #006655;
+    }
+
+    90% {
+        transform: translate(-2px, 0) rotate(-2deg);
+        background-color: #2d5851;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+        background-color: #006655;
+    }
 }

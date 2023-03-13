@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Button, Row, Col, Toast, ToastContainer, Table, Modal, Form } from 'react-bootstrap';
+import { Container, Button, Row, Col, Toast, ToastContainer } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import colores from "../../css/colores.css";
+import  "../../css/colores.css";
 
 export default function ProductCard() {
     const location = useLocation();
@@ -41,7 +41,7 @@ export default function ProductCard() {
     const [position, setPosition] = useState('bottom-center');
 
 
-    const storeListProduct=async ()=>{
+    const storeListProduct = async () => {
         const config = {
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -73,20 +73,19 @@ export default function ProductCard() {
             <br /> <br /> <br />
 =======
                         <h1 className='colorVerde' style={{ fontSize: 24 + "pt", textAlign: "left" }}><b>{producto.modelo}</b></h1>
+<<<<<<< HEAD
                         <br />  
 >>>>>>> 1a54eae2f62a5b391fcf643d12a20ac7b653a03e
+=======
+                        <br />
+>>>>>>> 750dcaf9f72abd206dcdc01dfd81dc36b2791403
                         <Row style={{ textAlign: "left" }}>
-                            <Col >
-                                <br /> <br />  <br /> <br />
-                                <img alt={producto.modelo} title={producto.modelo} src={producto.imagen} width={550}></img>
-                            </Col>
-                            <Col md="5" >
+                            <Col md="6" >
                                 <h4 className='colorVerde'>Características</h4>
                                 <br></br>
                                 <h5> <span>Precio: </span> <span className='colorMorado'> ${producto.precio} MXN</span>  </h5>
                                 <h5><span>Precio con IVA:</span> <span className='colorMorado'> ${producto.precio * 1.16} MXN</span></h5>
                                 <h5 style={{ textAlign: "justify" }}>{producto.descripcion}</h5>
-
                                 <Row>
                                     <Col>
                                         <h5> Categoría: {producto.categoria}</h5>
@@ -94,11 +93,30 @@ export default function ProductCard() {
                                         <h5> Marca: {producto.marca}</h5>
                                     </Col>
                                 </Row>
+                            </Col>
+
+                            <Col >
                                 <Row>
-                                    <Button variant='primary' onClick={toastShowC}>Añadir al carrito</Button>
+                                    <br /> <br />  <br /> <br />
+                                    <img
+                                        alt={producto.modelo} //imagen alternativa cuando no carga la imagen
+                                        onError={({ currentTarget }) => {
+                                            currentTarget.onerror = null; // prevents looping
+                                            currentTarget.src = "https://www.evoximages.com/wp-content/uploads/2021/09/Forcolorspin2.gif";
+                                        }}
+                                        title={producto.modelo}
+                                        src={producto.imagen}
+                                        width={550}>
+                                    </img>
+                                </Row>
+                                <br></br>
+                                <Row>
+                                    <Button className='botonAdd' onClick={toastShowC}>Añadir al carrito</Button>
                                 </Row>
                             </Col>
                         </Row>
+
+
                         <ToastContainer className="p-3" position={position}>
                             <Toast show={showToastC} onClose={toastCloseC}>
                                 <Toast.Header>

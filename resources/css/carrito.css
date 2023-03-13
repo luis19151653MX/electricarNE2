@@ -1,15 +1,46 @@
-.carritoFila{
+.carritoRow{
+    justify-content: center;
+}
+
+.carritoFila {
+    display: flex;
+    align-items:center;
+    min-width: 270px;
+    max-width: 270px;
     cursor: pointer;
-    color:#ebf4fa;
+    color: #ebf4fa;
     border-radius: 10px;
     padding: auto;
     border-color: rgb(197, 197, 197);
     border-width: 2px;
-    justify-content: left;
 }
 
-.titulo{
+.listaFila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align:center; 
+    max-width:500;
+    width: 470;
+    min-width: 470px;
+}
+
+.listaFila:hover{
+    background-color: #006655;
+    color:white;
+    transform: scale(1.02);
+    border-radius: 10px;
+}
+
+.titulo {
     color: #006655;
     font-size: 24pt;
-    text-align:center;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% { background-color: #006655; color:white }
+    50% { background-color: #007965; }
+    100% { background-color: #006655; }
 }

@@ -39,8 +39,9 @@ function Login() {
         ).then(response => {
             if (response.status === 200) {
                 window.GlobalUsuarioId=response.data[0].id;
+                localStorage.setItem("usuarioId",response.data[0].id);
                 console.log('Correcto:'+ response.data[0].nombre);
-                navigate('/electricarNE2/public/Home')
+                navigate('/electricarNE2/public/Home');
             }
         }).catch(error => {
             console.log(error);
